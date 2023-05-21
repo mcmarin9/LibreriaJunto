@@ -36,14 +36,11 @@ public class VentanaComprar extends JFrame {
 		this.setName("LIBERÍA");
 		jp.setBackground(Color.decode("#F1F0EE"));
 
-		txtPrincipal = new JLabel("COMPRAR");
-		txtPrincipal.setBounds(320, 60, 180, 25);
+		txtPrincipal = ComponentesVentana.crearLabel("COMPRAR",320, 60, 180, 25, "#000000", true, jp);
 		txtPrincipal.setFont(new Font("Arial", Font.BOLD, 30));
-		jp.add(txtPrincipal);
 		
 		
-		btnSalir = new JButton("SALIR");
-		crearBoton(btnSalir, 15, 15, 80, 20, 12);
+		btnSalir = ComponentesVentana.crearBoton("SALIR", 15, 15, 80, 20, 12, "#6384A6", jp);
 		btnSalir.addActionListener(new ActionListener() {
 
 			@Override
@@ -52,8 +49,7 @@ public class VentanaComprar extends JFrame {
 			}
 		});
 
-		btnMasInfo = new JButton("+ INFO");
-		crearBoton(btnMasInfo, 15, 35, 80, 20, 12);
+		btnMasInfo = ComponentesVentana.crearBoton("+ INFO", 15, 35, 80, 20, 12, "#6384A6", jp);
 		btnMasInfo.addActionListener(new ActionListener() {
 
 			@Override
@@ -73,38 +69,27 @@ public class VentanaComprar extends JFrame {
 			}
 		});
 
-		listaBoligrafos = new JList<>();
-		crearLista(listaBoligrafos, Boligrafo.class);
-		btnBoligrafos = new JButton("BOLIGRAFOS");
-		crearBoton(btnBoligrafos, 40, 130, 120, 25, 16);
+		listaBoligrafos = ComponentesVentana.crearLista(listaBoligrafos, Boligrafo.class, jp);
+		btnBoligrafos = ComponentesVentana.crearBoton("BOLIGRAFOS", 40, 130, 110, 25, 16, "#6384A6", jp);
 		oyente(btnBoligrafos, listaBoligrafos);
 
-		listaCarpetas = new JList<>();
-		crearLista(listaCarpetas, Carpeta.class);
-		btnCarpetas = new JButton("CARPETAS");
-		crearBoton(btnCarpetas, 40, 230, 110, 25, 16);
+		listaCarpetas = ComponentesVentana.crearLista(listaCarpetas, Carpeta.class, jp);
+		btnCarpetas = ComponentesVentana.crearBoton("CARPETAS", 40, 230, 110, 25, 16, "#6384A6", jp);
 		oyente(btnCarpetas, listaCarpetas);
 
-		listaEstuches = new JList<>();
-		crearLista(listaEstuches, Estuche.class);
-		btnEstuches = new JButton("ESTUCHES");
-		crearBoton(btnEstuches, 190, 130, 110, 25, 16);
+		listaEstuches = ComponentesVentana.crearLista(listaEstuches, Estuche.class, jp);
+		btnEstuches = ComponentesVentana.crearBoton("ESTUCHES", 190, 130, 110, 25, 16, "#6384A6", jp);
 		oyente(btnEstuches, listaEstuches);
 
-		listaLibretas = new JList<>();
-		crearLista(listaLibretas, Libreta.class);
-		btnLibretas = new JButton("LIBRETAS");
-		crearBoton(btnLibretas, 40, 180, 110, 25, 16);
+		listaLibretas = ComponentesVentana.crearLista(listaLibretas, Libreta.class, jp);
+		btnLibretas = ComponentesVentana.crearBoton("LIBRETAS", 40, 180, 110, 25, 16, "#6384A6", jp);
 		oyente(btnLibretas, listaLibretas);
 
-		listaLibros = new JList<>();
-		crearLista(listaLibros, Libro.class);
-		btnLibros = new JButton("LIBROS");
-		crearBoton(btnLibros, 190, 180, 110, 25, 16);
+		listaLibros = ComponentesVentana.crearLista(listaLibros, Libro.class, jp);
+		btnLibros = ComponentesVentana.crearBoton("LIBROS", 190, 180, 110, 25, 16, "#6384A6", jp);
 		oyente(btnLibros, listaLibros);
 
-		btnAnadir = new JButton("AÑADIR AL CARRITO");
-		crearBoton(btnAnadir, 190, 230, 110, 25, 16);
+		btnAnadir = ComponentesVentana.crearBoton("AÑADIR AL CARRITO", 190, 230, 110, 25, 16, "#6384A6", jp);
 		btnAnadir.addActionListener(new ActionListener() {
 
 			@Override
@@ -144,25 +129,9 @@ public class VentanaComprar extends JFrame {
 		});
 	}
 
-	private void crearBoton(JButton btn, int x, int y, int ancho, int alto, int tamanoLetra) {
-		btn.setBounds(x, y, ancho, alto);
-		btn.setFont(new Font("Arial", Font.BOLD, tamanoLetra));
-		btn.setBackground(Color.decode("#6384A6"));
-		btn.setBorder(null);
-		jp.add(btn);
 
-	}
 
-	private void crearLista(JList<String> lista, Class<?> clase) {
-		lista.setListData(obtenerListaProductos(clase));
-		lista.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		lista.setBounds(350, 120, 200, 200);
-		lista.setVisible(false);
-		jp.add(lista);
-
-	}
-
-	private String[] obtenerListaProductos(Class<?> clase) { // esto es como un comodín para meter cualquier clase
+	public static String[] obtenerListaProductos(Class<?> clase) { // esto es como un comodín para meter cualquier clase
 		ArrayList<String> productos = new ArrayList<String>();
 
 		for (Producto producto : Producto.getListaProductos()) {

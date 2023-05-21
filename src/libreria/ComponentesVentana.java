@@ -5,10 +5,12 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -53,6 +55,17 @@ public class ComponentesVentana {
         jp.add(boton);
         return boton;
     }
+    
+	public static JList<String> crearLista(JList<String> lista, Class<?> clase, JPanel jp) {
+		lista = new JList<>();
+		lista.setListData(VentanaComprar.obtenerListaProductos(clase));
+		lista.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		lista.setBounds(350, 120, 200, 200);
+		lista.setVisible(false);
+		jp.add(lista);
+		return lista;
+
+	}
 
 	public static JTextArea crearMensajeArea(String mensaje, int x, int y, int ancho, int alto, String color, String colorLetra) {
 		JTextArea txtArea = new JTextArea(mensaje);
