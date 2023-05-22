@@ -25,8 +25,8 @@ public class VentanaCrearProducto extends JFrame {
 	private JPanel jp, jpBool;
 	private JComboBox<String> listaProductos;
 	private JButton crearProducto;
-	private JTextField campoNombre, campoDescripcion, campoPrecioUnidad, campoUnidadesStock, campoColor,
-			campoTipo, campoTamano, campoNum, campoEditorial, campoTematica, campoAutor;
+	private JTextField campoNombre, campoDescripcion, campoPrecioUnidad, campoUnidadesStock, campoColor, campoTipo,
+			campoTamano, campoNum, campoEditorial, campoTematica, campoAutor;
 	private JLabel txtNombre, txtDescripcion, txtPrecioUnidad, txtUnidadesStock, txtPuntaFina, txtColor, txtNumAnillas,
 			txtConAnillas, txtTipo, txtNumColores, txtTamano, txtNumHojas, txtEditorial, txtTematica, txtAutor;
 	private ButtonGroup bg;
@@ -70,7 +70,7 @@ public class VentanaCrearProducto extends JFrame {
 
 		jp.add(listaProductos);
 
-		txtNombre =ComponentesVentana.crearLabel("Nombre", 135, 30, 80, 20, "#000000", true, jp);
+		txtNombre = ComponentesVentana.crearLabel("Nombre", 135, 30, 80, 20, "#000000", true, jp);
 		txtDescripcion = ComponentesVentana.crearLabel("Descripción", 135, 55, 80, 20, "#000000", true, jp);
 		txtPrecioUnidad = ComponentesVentana.crearLabel("Precio Unidad", 135, 80, 80, 20, "#000000", true, jp);
 		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 135, 105, 80, 20, "#000000", true, jp);
@@ -86,13 +86,18 @@ public class VentanaCrearProducto extends JFrame {
 		txtPuntaFina = ComponentesVentana.crearLabel("Punta fina", 175, 145, 80, 20, "#000000", false, jp);
 		txtConAnillas = ComponentesVentana.crearLabel("Con anillas", 175, 145, 80, 20, "#000000", false, jp);
 
-		si = new JRadioButton("SÍ");
+		
+		si = ComponentesVentana.crearRadioButton("SÍ", 0, 0, 60, 20, "#D1E8E5");
+		no = ComponentesVentana.crearRadioButton("NO", 70, 0, 60, 20, "#D1E8E5");
+
+		/*si = new JRadioButton("SÍ");
 		si.setBackground(Color.decode("#D1E8E5"));
 		si.setBounds(0, 0, 60, 20);
 		no = new JRadioButton("NO");
 		no.setBackground(Color.decode("#D1E8E5"));
 		no.setBounds(70, 0, 60, 20);
-
+		 */
+		/*
 		jpBool = new JPanel();
 		jpBool.setBackground(Color.decode("#D1E8E5"));
 		jpBool.setBounds(230, 140, 120, 30);
@@ -104,6 +109,8 @@ public class VentanaCrearProducto extends JFrame {
 		jpBool.add(no);
 		jpBool.setVisible(false);
 		jp.add(jpBool);
+		*/
+		jpBool = ComponentesVentana.crearRadioButtons(si, no, jp);
 
 		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 10, 170, 80, 20, "#000000", false, jp);
 
@@ -115,16 +122,16 @@ public class VentanaCrearProducto extends JFrame {
 		campoTipo = ComponentesVentana.crearTextField(80, 145, 80, 20, false, true, "#F5F5F5", jp);
 
 		txtNumColores = ComponentesVentana.crearLabel("Num colores", 10, 170, 80, 20, "#000000", false, jp);
-		txtNumHojas = 	ComponentesVentana.crearLabel("Num hojas", 10, 170, 80, 20, "#000000", false, jp);
+		txtNumHojas = ComponentesVentana.crearLabel("Num hojas", 10, 170, 80, 20, "#000000", false, jp);
 		campoNum = ComponentesVentana.crearTextField(80, 170, 80, 20, false, true, "#F5F5F5", jp);
 
-		txtEditorial = 	ComponentesVentana.crearLabel("Editorial", 10, 145, 80, 20, "#000000", false, jp);
+		txtEditorial = ComponentesVentana.crearLabel("Editorial", 10, 145, 80, 20, "#000000", false, jp);
 		campoEditorial = ComponentesVentana.crearTextField(80, 145, 80, 20, false, true, "#F5F5F5", jp);
 
 		txtTematica = ComponentesVentana.crearLabel("Temática", 175, 145, 80, 20, "#000000", false, jp);
 		campoTematica = ComponentesVentana.crearTextField(230, 145, 80, 20, false, true, "#F5F5F5", jp);
 
-		txtAutor = 	ComponentesVentana.crearLabel("Autor", 10, 170, 80, 20, "#000000", false, jp);
+		txtAutor = ComponentesVentana.crearLabel("Autor", 10, 170, 80, 20, "#000000", false, jp);
 		campoAutor = ComponentesVentana.crearTextField(80, 170, 80, 20, false, true, "#F5F5F5", jp);
 
 		crearProducto = ComponentesVentana.crearBoton("CREAR", 155, 200, 50, 20, 12, "#B1C5D0", jp);
@@ -154,10 +161,18 @@ public class VentanaCrearProducto extends JFrame {
 									Double.parseDouble(campoPrecioUnidad.getText()),
 									Integer.parseInt(campoUnidadesStock.getText()), campoBool, campoColor.getText());
 						} else if (seleccionado.equalsIgnoreCase("CARPETA")) {
-							Carpeta carpetaNueva = new Carpeta(campoNombre.getText(), campoDescripcion.getText(),
-									Double.parseDouble(campoPrecioUnidad.getText()),
-									Integer.parseInt(campoUnidadesStock.getText()), campoBool,
-									Integer.parseInt(campoNum.getText()), campoTamano.getText(), campoColor.getText());
+
+							if (no.isSelected() && Integer.parseInt(campoNum.getText()) != 0) {
+								JOptionPane.showMessageDialog(null,
+										"Es incompatible que el número de anillas con la condición \"No tiene anillas\".\nSe establecerá el valor 0 anillas.");
+								campoNum.setText("0");
+							} else {
+								Carpeta carpetaNueva = new Carpeta(campoNombre.getText(), campoDescripcion.getText(),
+										Double.parseDouble(campoPrecioUnidad.getText()),
+										Integer.parseInt(campoUnidadesStock.getText()), campoBool,
+										Integer.parseInt(campoNum.getText()), campoTamano.getText(),
+										campoColor.getText());
+							}
 							// si campoBool es false el numero de anillas va a ser 0
 
 						} else if (seleccionado.equalsIgnoreCase("ESTUCHE")) {
