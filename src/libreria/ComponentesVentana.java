@@ -76,7 +76,9 @@ public class ComponentesVentana {
 			String colorLetra) {
 		JTextArea txtArea = new JTextArea(mensaje);
 		txtArea.setBounds(x, y, ancho, alto);
-		txtArea.setFont(new Font("ARIAL", Font.BOLD, 11));
+		txtArea.setFont(new Font("ARIAL", Font.BOLD, 19));
+		txtArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
+		txtArea.setAlignmentY(JTextArea.CENTER_ALIGNMENT);
 		txtArea.setVisible(true);
 		txtArea.setEditable(false);
 		txtArea.setLineWrap(true);
