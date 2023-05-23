@@ -97,21 +97,22 @@ public class ComponentesVentana {
 		return radio;
 	}
 
-	public static JPanel crearRadioButtons(JRadioButton si, JRadioButton no, JPanel jp) {
+	public static JPanel crearRadioButtons(JRadioButton si, JRadioButton no) {
 
 		JPanel jpBool = new JPanel();
 		jpBool.setBackground(Color.decode("#D1E8E5"));
 		jpBool.setBounds(230, 140, 120, 30);
-
-		ButtonGroup bg = new ButtonGroup();
-		bg.add(si);
-		bg.add(no);
 		jpBool.add(si);
 		jpBool.add(no);
 		jpBool.setVisible(false);
-		jp.add(jpBool);
-
 		return jpBool;
+	}
+
+	public static ButtonGroup crearButtonGroup(JRadioButton si, JRadioButton no) {
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(si);
+		bg.add(no);
+		return bg;
 	}
 
 }

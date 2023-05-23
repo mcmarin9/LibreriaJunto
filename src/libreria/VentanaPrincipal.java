@@ -145,8 +145,7 @@ public class VentanaPrincipal extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-
+			
 				VentanaComprar vComprar = new VentanaComprar(cliente);
 				
 				

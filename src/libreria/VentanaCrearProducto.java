@@ -89,12 +89,13 @@ public class VentanaCrearProducto extends JFrame {
 		
 		si = ComponentesVentana.crearRadioButton("SÍ", 0, 0, 60, 20, "#D1E8E5");
 		no = ComponentesVentana.crearRadioButton("NO", 70, 0, 60, 20, "#D1E8E5");
-		jpBool = ComponentesVentana.crearRadioButtons(si, no, jp);
-
+		bg = ComponentesVentana.crearButtonGroup(si, no);
+		jpBool = ComponentesVentana.crearRadioButtons(si, no);
+		jp.add(jpBool);
+		
 		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 10, 170, 80, 20, "#000000", false, jp);
 
 		txtTamano = ComponentesVentana.crearLabel("Tamaño", 175, 170, 80, 20, "#000000", false, jp);
-
 		campoTamano = ComponentesVentana.crearTextField(230, 170, 80, 20, false, true, "#F5F5F5", jp);
 
 		txtTipo = ComponentesVentana.crearLabel("Tipo", 10, 145, 80, 20, "#000000", false, jp);
