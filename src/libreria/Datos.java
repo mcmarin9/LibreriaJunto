@@ -45,8 +45,7 @@ public class Datos {
 				"témperas", 12);
 
 		Cliente cl1 = new Cliente("Ana", "123456789");
-		Cliente cl2 = new Cliente("Laura", "147852369");
-		Cliente cl3 = new Cliente("Manolo", "963852741");
+		Cliente cl2 = new Cliente("Manolo", "963852741");
 		Cliente admin = new Cliente("Admin", "987654321");
 
 		cl1.getListaCompra().add(e1);

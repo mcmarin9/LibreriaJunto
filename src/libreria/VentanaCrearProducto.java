@@ -89,27 +89,6 @@ public class VentanaCrearProducto extends JFrame {
 		
 		si = ComponentesVentana.crearRadioButton("SÍ", 0, 0, 60, 20, "#D1E8E5");
 		no = ComponentesVentana.crearRadioButton("NO", 70, 0, 60, 20, "#D1E8E5");
-
-		/*si = new JRadioButton("SÍ");
-		si.setBackground(Color.decode("#D1E8E5"));
-		si.setBounds(0, 0, 60, 20);
-		no = new JRadioButton("NO");
-		no.setBackground(Color.decode("#D1E8E5"));
-		no.setBounds(70, 0, 60, 20);
-		 */
-		/*
-		jpBool = new JPanel();
-		jpBool.setBackground(Color.decode("#D1E8E5"));
-		jpBool.setBounds(230, 140, 120, 30);
-
-		bg = new ButtonGroup();
-		bg.add(si);
-		bg.add(no);
-		jpBool.add(si);
-		jpBool.add(no);
-		jpBool.setVisible(false);
-		jp.add(jpBool);
-		*/
 		jpBool = ComponentesVentana.crearRadioButtons(si, no, jp);
 
 		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 10, 170, 80, 20, "#000000", false, jp);
@@ -173,7 +152,6 @@ public class VentanaCrearProducto extends JFrame {
 										Integer.parseInt(campoNum.getText()), campoTamano.getText(),
 										campoColor.getText());
 							}
-							// si campoBool es false el numero de anillas va a ser 0
 
 						} else if (seleccionado.equalsIgnoreCase("ESTUCHE")) {
 							Estuche estucheNuevo = new Estuche(campoNombre.getText(), campoDescripcion.getText(),

@@ -23,7 +23,7 @@ public class VentanaComprar extends JFrame {
 	private JPanel jp;
 	private JButton btnSalir, btnBoligrafos, btnCarpetas, btnEstuches, btnLibretas, btnLibros, btnAnadir, btnMasInfo;
 	private JList<String> listaBoligrafos, listaCarpetas, listaEstuches, listaLibretas, listaLibros;
-	private JLabel txtPrincipal;
+	private JLabel txtPrincipal, txtSeleccionar;
 
 	public VentanaComprar(Cliente cliente) {
 
@@ -37,7 +37,10 @@ public class VentanaComprar extends JFrame {
 		jp.setBackground(Color.decode("#F1F0EE"));
 
 		txtPrincipal = ComponentesVentana.crearLabel("COMPRAR",320, 60, 180, 25, "#000000", true, jp);
-		txtPrincipal.setFont(new Font("Arial", Font.BOLD, 30));
+		txtPrincipal.setFont(new Font("Arial", Font.BOLD, 16));
+		
+		txtPrincipal = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado SHIFT.",15, 315, 540, 25, "#000000", true, jp);
+		txtPrincipal.setFont(new Font("Arial", Font.ITALIC, 16));
 		
 		
 		btnSalir = ComponentesVentana.crearBoton("SALIR", 15, 15, 80, 20, 12, "#6384A6", jp);
@@ -144,15 +147,12 @@ public class VentanaComprar extends JFrame {
 		return productos.toArray(new String[0]);
 	}
 
-	/**
-	 * 
-	 * @param cliente
-	 * @param numCategoria -> con este número se indica la posición del array
-	 *                     correspondiente a la letra del código del producto
-	 * @param lista
-	 * @param numCategoria
-	 * @param clase
-	 */
+/**
+ * 
+ * @param lista
+ * @param numCategoria
+ * @param clase
+ */
 	private void verMasInfo(JList<String> lista, int numCategoria, Class<?> clase) {
 
 		final String[] LETRAS = { "", "B", "C", "E", "LT",  "LB"};
@@ -181,6 +181,12 @@ public class VentanaComprar extends JFrame {
 		}
 	}
 
+	/**
+	 * @param cliente
+	 * @param numCategoria -> indica en el método anadirCarrito la letra correspondiente al tipo de producto
+	 * @param lista -> es una lista por si se añade más de un producto a la vez
+	 */
+	
 	private void guardarProducto(Cliente cliente, int numCategoria, JList<String> lista) {
 
 		int numProducto = 0;

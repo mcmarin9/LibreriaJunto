@@ -18,14 +18,13 @@ import javax.swing.JTextArea;
 public class VentanaProductos extends JFrame {
 
 	private JLabel listaProductos, txtCantidadProductos, txtTotal;
-
 	private JButton btnMenu, btnPagar;
-
 	private JTextArea areaProductos;
-
 	private JPanel areaP;
-
 	private JScrollPane scroll;
+	
+	private int numProductos; 
+	private double total;
 
 	public VentanaProductos(Cliente cliente, String opcion) {
 
@@ -43,9 +42,9 @@ public class VentanaProductos extends JFrame {
 		jp.add(areaP);
 
 		listaProductos = ComponentesVentana.crearLabel(opcion, 100, 17, 200, 20, "#F1F0EE", true, jp);
-		listaProductos.setFont(new Font("Verdana", Font.BOLD, 20));
+		listaProductos.setFont(new Font("Verdana", Font.BOLD, 16));
 
-		areaProductos = ComponentesVentana.crearMensajeArea("", 100,100,400,400, "#FFFFFF", "#000000");
+		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 400, 400, "#FFFFFF", "#000000");
 
 		scroll = new JScrollPane(areaProductos);
 		scroll.setBounds(100, 100, 400, 300);
@@ -69,21 +68,21 @@ public class VentanaProductos extends JFrame {
 		// PAGAR
 		btnPagar = ComponentesVentana.crearBoton("PAGAR", 600, 180, 100, 20, 20, "#D4B49F", jp);
 		btnPagar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
-
+		
+		numProductos = 0; 
+		total = cliente.precioTotal();
+		
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
 			Producto.mostrarProductos(areaProductos);
 			btnPagar.setVisible(false);
 		} else {
 			
-			int numProductos = 0; 
 			numProductos = cliente.mostrarListaCompra(areaProductos);
-			double total = cliente.precioTotal();
 			
 			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: "+ (numProductos-1), 550, 80, 230, 20, "#000000", true, jp);
 			txtCantidadProductos.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
-			txtTotal = ComponentesVentana.crearLabel("Total: "  + total + " €", 550, 100, 120, 20, "#000000", true, jp);
+			txtTotal = ComponentesVentana.crearLabel("Total: "  + total + " €", 550, 100, 140, 20, "#000000", true, jp);
 			txtTotal.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
-			
 			
 			btnPagar.addActionListener(new ActionListener() {
 
@@ -91,6 +90,11 @@ public class VentanaProductos extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 
 					cliente.pagar();
+			        total = 0; 
+			        numProductos = 0; 
+			        txtCantidadProductos.setText("Número de productos: " + numProductos);
+			        txtTotal.setText("Total: " + total + " €");
+					
 				}
 			});
 		}

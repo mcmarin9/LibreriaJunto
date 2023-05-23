@@ -65,7 +65,7 @@ public class ComponentesVentana {
 		lista = new JList<>();
 		lista.setListData(VentanaComprar.obtenerListaProductos(clase));
 		lista.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		lista.setBounds(350, 120, 200, 200);
+		lista.setBounds(350, 120, 210, 180);
 		lista.setVisible(false);
 		jp.add(lista);
 		return lista;
@@ -76,7 +76,7 @@ public class ComponentesVentana {
 			String colorLetra) {
 		JTextArea txtArea = new JTextArea(mensaje);
 		txtArea.setBounds(x, y, ancho, alto);
-		txtArea.setFont(new Font("ARIAL", Font.BOLD, 19));
+		txtArea.setFont(new Font("ARIAL", Font.BOLD, 16));
 		txtArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 		txtArea.setAlignmentY(JTextArea.CENTER_ALIGNMENT);
 		txtArea.setVisible(true);

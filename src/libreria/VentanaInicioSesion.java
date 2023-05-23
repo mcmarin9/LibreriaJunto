@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
@@ -30,7 +31,7 @@ public class VentanaInicioSesion extends JFrame {
 	private JPanel jp, areaColor;
 
 	public VentanaInicioSesion() {
-
+		super("The Meow Desk");
 		jp = new JPanel();
 		this.setContentPane(jp);
 
@@ -39,15 +40,15 @@ public class VentanaInicioSesion extends JFrame {
 
 		// MENSAJES ERRORES
 
-		error = ComponentesVentana.crearLabel("Error, el número de teléfono debe tener 9 dígitos", 25, 360, 320, 40, "#FF0000", false, jp);
+		error = ComponentesVentana.crearLabel("Error, el número de teléfono debe tener 9 dígitos", 25, 360, 320, 40,
+				"#FF0000", false, jp);
 		error.setFont(new Font("Calibri", Font.ITALIC, 16));
 		error.setVisible(false);
 
-
-		errorNumRepe = ComponentesVentana.crearLabel("Error, este numero esta asociado a otro usuario", 20, 360, 320, 40, "#FF0000", false, jp);
+		errorNumRepe = ComponentesVentana.crearLabel("Error, este numero esta asociado a otro usuario", 20, 360, 320,
+				40, "#FF0000", false, jp);
 		errorNumRepe.setFont(new Font("Calibri", Font.ITALIC, 16));
 		errorNumRepe.setVisible(false);
-
 
 		// Panel de color
 		areaColor = new JPanel();
@@ -55,7 +56,9 @@ public class VentanaInicioSesion extends JFrame {
 		areaColor.setBackground(Color.decode("#B1C5D0"));
 		bienvenido = ComponentesVentana.crearLabel("BIENVENID@!", 400, 100, 450, 40, "#FFFFFF", true, jp);
 		bienvenido.setFont(new Font("ARIAL", Font.BOLD, 32));
-		mensaje = ComponentesVentana.crearMensajeArea("Introduzca su informacion personal para poder disfrutar de una experiencia excepcional!", 400, 150, 200, 140, "#B1C5D0", "#FFFFFF");
+		mensaje = ComponentesVentana.crearMensajeArea(
+				"Introduzca su informacion personal para poder disfrutar de una experiencia excepcional!", 400, 150,
+				200, 140, "#B1C5D0", "#FFFFFF");
 
 		jp.add(mensaje);
 		jp.add(areaColor);
@@ -64,7 +67,6 @@ public class VentanaInicioSesion extends JFrame {
 
 		inicioSesion = ComponentesVentana.crearLabel("INICIA SESION EN TMD", 40, 15, 300, 42, "#B1C5D0", true, jp);
 		inicioSesion.setFont(new Font("Verdana", Font.BOLD, 22));
-	
 
 		JSeparator separador = ComponentesVentana.crearSeparador(25, 55, 370, 25, "#B1C5D0");
 		jp.add(separador);
@@ -102,39 +104,48 @@ public class VentanaInicioSesion extends JFrame {
 
 	}
 
-
-
-
-
-	public Cliente iniciar() {
-
+	private Cliente iniciar() {
 		String numTelefono = campoTelefono.getText();
 		String nombre = campoNombre.getText();
 		error.setVisible(false);
 		errorNumRepe.setVisible(false);
 
-		if (numTelefono.length() == 9 && !nombre.isEmpty()) {
-			cliente = Cliente.iniciarSesion(nombre, numTelefono);
-
-			if (cliente != null) {
-
-				VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(cliente);
-				dispose();
-
-			} else {
-				errorNumRepe.setVisible(true);
-				System.out.println("error");
-			}
-
-		} else {
-			error.setVisible(true);
+		if (nombre.isEmpty() || numTelefono.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Por favor rellena todos los campos.");
+			return null;
 		}
 
-		return cliente;
+		boolean comprobacion = comprobarTelefono(numTelefono);
+
+		
+		 if (comprobacion && numTelefono.length() == 9) {
+		        cliente = Cliente.iniciarSesion(nombre, numTelefono);
+
+		        if (cliente != null) {
+		            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(cliente);
+		            dispose();
+		        } else {
+		            errorNumRepe.setVisible(true);
+		            System.out.println("Error: número de registro repetido.");
+		        }
+		    } else {
+		        error.setVisible(true);
+		        System.out.println("Error: el número de teléfono debe tener 9 dígitos.");
+		       
+		    }
+
+		    return cliente;
 
 	}
-	
 
-
-
+	private boolean comprobarTelefono(String numTelefono) {
+	    
+	    for (char c : numTelefono.toCharArray()) {
+	        if (!Character.isDigit(c)) {
+	            return false;
+	        }
+	    }
+	    
+		return true;
+	}
 }

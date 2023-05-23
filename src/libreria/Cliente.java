@@ -69,8 +69,8 @@ public class Cliente {
 			if (!n.equalsIgnoreCase(cliente.getNombre()) && tlf.equalsIgnoreCase(cliente.getTelefono())) {
 				encontrado = true;
 				cliente = null;
-
 				return cliente;
+				
 			} else if (n.equalsIgnoreCase(cliente.getNombre()) && tlf.equalsIgnoreCase(cliente.getTelefono())) {
 				encontrado = true;
 				return cliente;
@@ -94,6 +94,12 @@ public class Cliente {
 
 	}
 
+	/**
+	 * Este método compone el código de producto formado por una letra y un número de tres dígitos y 
+	 * llama a buscarProducto para que si existe el producto y si quedan unidades. 
+	 * @param numCategoria
+	 * @param numProducto
+	 */
 	public void anadirCarrito(int numCategoria, String numProducto) {
 		String codigoProducto = null;
 		Producto productoEncontrado = null;
@@ -139,7 +145,6 @@ public class Cliente {
 		if (total != 0) {
 			JOptionPane.showMessageDialog(null,
 					"Gracias por su compra, el total es: " + Math.round(total * 100.0) / 100.0 + " €");
-
 			getListaCompra().clear();
 
 		} else {

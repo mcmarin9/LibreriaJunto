@@ -86,7 +86,7 @@ public abstract class Producto {
 	public static void mostrarProductos(JTextArea areaProductos) {
 
 		for (Producto productos : Producto.getListaProductos()) {
-			areaProductos.append(productos.toString() + "\n");
+			areaProductos.append(productos.toString());
 			areaProductos.append(System.lineSeparator());
 		}
 
