@@ -1,7 +1,7 @@
 package libreria;
 
 public class Libreta extends Producto {
-
+//hola patricia
 	private int numHojas;
 	private String tamano; // a5, a3 etc
 	private String color;
@@ -20,7 +20,7 @@ public class Libreta extends Producto {
 		this.numHojas = numHojas;
 		this.tamano = tamano;
 		this.color = color;
-		
+
 		Producto.getListaProductos().add(this);
 	}
 
@@ -47,11 +47,11 @@ public class Libreta extends Producto {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+
 	@Override
 	public String toString() {
-		return super.toString() + " numHojas: " + numHojas + ", tamano: " + tamano + ", color: " + color +
-				"\n---------------------------------------------------------------------------" + "\n";
+		return super.toString() + " numHojas: " + numHojas + ", tamano: " + tamano + ", color: " + color
+				+ "\n---------------------------------------------------------------------------" + "\n";
 	}
 
 	@Override
