@@ -20,6 +20,10 @@ public class Datos {
 		
 		Libreta lt1 = new Libreta("Libreta HK", "libreta de hello kitty", 5.50, 1, 40, "A4", "rosa");
 		Libreta lt2 = new Libreta("Libreta manzana", "libreta con una manzana", 1.20, 4, 25, "A5", "verde");
+		Libreta lt3 = new Libreta("Mini libreta", "de bolsillo", 9.99, 5, 35, "A6", "azul");
+		Libreta lt4 = new Libreta("Libreta simple", "libreta sin muelle", 2.50, 0, 35, "A4", "amarillo");
+		Libreta lt5 = new Libreta("Libreta tapa dura", "de cuadros", 60, 5, 35, "A5", "blanco");
+		Libreta lt6 = new Libreta("Libreta pequeña", "libreta normal", 2.00, 2, 30, "A5", "negro");
 
 		Libro l1 = new Libro("Harry Potter y la cámara secreta", "Segundo libro de la saga", 15.99, 2, "Salamandara",
 				"Fantasía", "JK Rowling");
