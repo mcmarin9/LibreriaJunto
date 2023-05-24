@@ -1,7 +1,7 @@
 package libreria;
 
 public class Estuche extends Producto {
-
+//prueba git
 	// estuche (tipo(de lapices, rotuladores, temperas), numero de colores)
 	private String tipo; // lapices, rotuladores, temperas
 	private int numColores;
