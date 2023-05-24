@@ -40,49 +40,50 @@ public class VentanaInicioSesion extends JFrame {
 
 		// MENSAJES ERRORES
 
-		error = ComponentesVentana.crearLabel("Error, el número de teléfono debe tener 9 dígitos", 25, 360, 320, 40,
+		error = ComponentesVentana.crearLabel("Error, el nÃºmero de telÃ©fono debe tener 9 dÃ­gitos", 50, 320, 320, 20,
 				"#FF0000", false, jp);
-		error.setFont(new Font("Calibri", Font.ITALIC, 16));
+		error.setFont(new Font("Calibri", Font.ITALIC, 13));
 		error.setVisible(false);
 
-		errorNumRepe = ComponentesVentana.crearLabel("Error, este numero esta asociado a otro usuario", 20, 360, 320,
-				40, "#FF0000", false, jp);
-		errorNumRepe.setFont(new Font("Calibri", Font.ITALIC, 16));
+		errorNumRepe = ComponentesVentana.crearLabel("Error, este numero esta asociado a otro usuario", 50, 320, 320,
+				20, "#FF0000", false, jp);
+		errorNumRepe.setFont(new Font("Calibri", Font.ITALIC, 13));
 		errorNumRepe.setVisible(false);
 
 		// Panel de color
 		areaColor = new JPanel();
 		areaColor.setBounds(350, 0, 420, 420);
 		areaColor.setBackground(Color.decode("#B1C5D0"));
-		bienvenido = ComponentesVentana.crearLabel("BIENVENID@!", 400, 100, 450, 40, "#FFFFFF", true, jp);
-		bienvenido.setFont(new Font("ARIAL", Font.BOLD, 32));
+		bienvenido = ComponentesVentana.crearLabel("BIENVENID@!", 420, 130, 450, 40, "#FFFFFF", true, jp);
+		bienvenido.setFont(new Font("ARIAL", Font.BOLD, 30));
 		mensaje = ComponentesVentana.crearMensajeArea(
-				"Introduzca su informacion personal para poder disfrutar de una experiencia excepcional!", 400, 150,
-				200, 140, "#B1C5D0", "#FFFFFF");
-
+				"Introduzca su informacion personal para poder \n     disfrutar de una experiencia excepcional!", 375, 180,
+				290, 140, "Arial", 13,"#B2C5D0", "#FFFFFF");
+	
 		jp.add(mensaje);
 		jp.add(areaColor);
 
-		// INICIO SESIÓN
+		// INICIO SESI N
 
-		inicioSesion = ComponentesVentana.crearLabel("INICIA SESION EN TMD", 40, 15, 300, 42, "#B1C5D0", true, jp);
-		inicioSesion.setFont(new Font("Verdana", Font.BOLD, 22));
+		inicioSesion = ComponentesVentana.crearLabel("INICIA SESION EN TMD", 40, 15, 300, 42, "#B2C5D0", true, jp);
+		inicioSesion.setFont(new Font("Verdana", Font.BOLD, 20));
 
-		JSeparator separador = ComponentesVentana.crearSeparador(25, 55, 370, 25, "#B1C5D0");
+		JSeparator separador = ComponentesVentana.crearSeparador(23, 55, 300, 25, "#B2C5D0");
 		jp.add(separador);
 
-		nombre = ComponentesVentana.crearLabel("Nombre", 145, 100, 210, 40, "#000000", true, jp);
+		nombre = ComponentesVentana.crearLabel("Nombre", 140, 90, 210, 30, "#000000", true, jp);
 		nombre.setFont(new Font("Calibri", Font.BOLD, 17));
-		campoNombre = ComponentesVentana.crearTextField(105, 140, 140, 40, true, true, "#F5F5F5", jp);
+		campoNombre = ComponentesVentana.crearTextField(108, 120, 120, 25, true, true, "#F5F5F5", jp);
 
-		telefono = ComponentesVentana.crearLabel("Teléfono", 145, 190, 120, 40, "#000000", true, jp);
+		telefono = ComponentesVentana.crearLabel("TelÃ©fono", 140, 180, 120, 30, "#000000", true, jp);
 		telefono.setFont(new Font("Calibri", Font.BOLD, 17));
-		campoTelefono = ComponentesVentana.crearTextField(105, 225, 140, 40, true, true, "#F5F5F5", jp);
+		campoTelefono = ComponentesVentana.crearTextField(108, 210, 120, 25, true, true, "#F5F5F5", jp);
 
 		// INICIAR SESION BOTON
 
-		iniciarSesion = ComponentesVentana.crearBoton("Iniciar Sesion", 108, 300, 130, 40, 18, "#B1C5D0", jp);
-		iniciarSesion.setFont(new Font("Calibri", Font.BOLD, 18));
+		iniciarSesion = ComponentesVentana.crearBoton("Iniciar Sesion", 108, 280, 120, 25, 17, "#B2C5D0", jp);
+		iniciarSesion.setFont(new Font("Calibri", Font.BOLD, 17));
+		iniciarSesion.setForeground(Color.decode("#FFFFFF"));
 		iniciarSesion.setVerticalAlignment(SwingConstants.CENTER);
 		jp.add(iniciarSesion);
 		iniciarSesion.addActionListener(new ActionListener() {
@@ -95,7 +96,7 @@ public class VentanaInicioSesion extends JFrame {
 
 		});
 
-		this.setSize(670, 450);
+		this.setSize(700, 390);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -126,11 +127,11 @@ public class VentanaInicioSesion extends JFrame {
 		            dispose();
 		        } else {
 		            errorNumRepe.setVisible(true);
-		            System.out.println("Error: número de registro repetido.");
+		            System.out.println("Error: n mero de registro repetido.");
 		        }
 		    } else {
 		        error.setVisible(true);
-		        System.out.println("Error: el número de teléfono debe tener 9 dígitos.");
+		        System.out.println("Error: el n mero de tel fono debe tener 9 d gitos.");
 		       
 		    }
 

@@ -72,17 +72,15 @@ public class ComponentesVentana {
 
 	}
 
-	public static JTextArea crearMensajeArea(String mensaje, int x, int y, int ancho, int alto, String color,
+	public static JTextArea crearMensajeArea(String mensaje, int x, int y, int ancho, int alto, String tipoLetra, int tamanio, String color,
 			String colorLetra) {
 		JTextArea txtArea = new JTextArea(mensaje);
 		txtArea.setBounds(x, y, ancho, alto);
-		txtArea.setFont(new Font("ARIAL", Font.BOLD, 16));
+		txtArea.setFont(new Font(tipoLetra, Font.BOLD, tamanio));
 		txtArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 		txtArea.setAlignmentY(JTextArea.CENTER_ALIGNMENT);
 		txtArea.setVisible(true);
 		txtArea.setEditable(false);
-		txtArea.setLineWrap(true);
-		txtArea.setWrapStyleWord(true);
 		txtArea.setBackground(Color.decode(color));
 		txtArea.setForeground(Color.decode(colorLetra));
 		txtArea.setEditable(false);

@@ -7,7 +7,6 @@ public class Libro extends Producto {
 	private String autor;
 
 	public Libro() {
-		//Hola Patricia
 		super();
 	}
 

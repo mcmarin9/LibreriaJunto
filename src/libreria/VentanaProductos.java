@@ -44,7 +44,7 @@ public class VentanaProductos extends JFrame {
 		listaProductos = ComponentesVentana.crearLabel(opcion, 100, 17, 200, 20, "#F1F0EE", true, jp);
 		listaProductos.setFont(new Font("Verdana", Font.BOLD, 16));
 
-		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "#FFFFFF", "#000000");
+		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
 
 		scroll = new JScrollPane(areaProductos);
 		scroll.setBounds(100, 100, 450, 300);
@@ -79,9 +79,9 @@ public class VentanaProductos extends JFrame {
 			
 			numProductos = cliente.mostrarListaCompra(areaProductos);
 			
-			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: "+ (numProductos-1), 550, 80, 230, 20, "#000000", true, jp);
+			txtCantidadProductos = ComponentesVentana.crearLabel("Nï¿½mero de productos: "+ (numProductos-1), 550, 80, 230, 20, "#000000", true, jp);
 			txtCantidadProductos.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
-			txtTotal = ComponentesVentana.crearLabel("Total: "  + total + " €", 550, 100, 140, 20, "#000000", true, jp);
+			txtTotal = ComponentesVentana.crearLabel("Total: "  + total + " ï¿½", 550, 100, 140, 20, "#000000", true, jp);
 			txtTotal.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
 			
 			btnPagar.addActionListener(new ActionListener() {
@@ -93,8 +93,8 @@ public class VentanaProductos extends JFrame {
 					
 			        total = 0; 
 			        numProductos = 0; 
-			        txtCantidadProductos.setText("Número de productos: " + numProductos);
-			        txtTotal.setText("Total: " + total + " €");
+			        txtCantidadProductos.setText("Nï¿½mero de productos: " + numProductos);
+			        txtTotal.setText("Total: " + total + " ï¿½");
 			        areaProductos.setText("");
 					
 				}
