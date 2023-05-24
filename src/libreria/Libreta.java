@@ -1,7 +1,6 @@
 package libreria;
 
 public class Libreta extends Producto {
-//hola patricia
 	private int numHojas;
 	private String tamano; // a5, a3 etc
 	private String color;
