@@ -34,13 +34,13 @@ public class VentanaComprar extends JFrame {
 		
 		
 		this.setLayout(new GroupLayout(jp));
-		this.setName("LIBERÍA");
+		this.setName("LIBERIA");
 		jp.setBackground(Color.decode("#F1F0EE"));
 
 		txtPrincipal = ComponentesVentana.crearLabel("COMPRAR",320, 60, 180, 25, "#000000", true, jp);
 		txtPrincipal.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		txtPrincipal = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado CONTROL.",15, 315, 540, 24, "#000000", true, jp);
+		txtPrincipal = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantÃ©n pulsado CONTROL.",15, 315, 540, 24, "#000000", true, jp);
 		txtPrincipal.setFont(new Font("Arial", Font.ITALIC, 16));
 		
 		
@@ -93,7 +93,7 @@ public class VentanaComprar extends JFrame {
 		btnLibros = ComponentesVentana.crearBoton("LIBROS", 190, 180, 110, 25, 16, "#6384A6", jp);
 		oyente(btnLibros, listaLibros);
 
-		btnAnadir = ComponentesVentana.crearBoton("AÑADIR AL CARRITO", 190, 230, 110, 25, 16, "#6384A6", jp);
+		btnAnadir = ComponentesVentana.crearBoton("AÃ‘ADIR AL CARRITO", 190, 230, 110, 25, 16, "#6384A6", jp);
 		btnAnadir.addActionListener(new ActionListener() {
 
 			@Override
@@ -135,13 +135,13 @@ public class VentanaComprar extends JFrame {
 
 
 
-	public static String[] obtenerListaProductos(Class<?> clase) { // esto es como un comodín para meter cualquier clase
+	public static String[] obtenerListaProductos(Class<?> clase) { // esto es como un comodï¿½n para meter cualquier clase
 		ArrayList<String> productos = new ArrayList<String>();
 
 		for (Producto producto : Producto.getListaProductos()) {
 			if (clase.isInstance(producto)) {
 				productos.add(producto.getCodigo() + " - " + producto.getNombre() + " - " + producto.getPrecioUnidad()
-						+ " €");
+						+ " ï¿½");
 			}
 		}
 
@@ -175,7 +175,7 @@ public class VentanaComprar extends JFrame {
 
 					String infoProducto = producto.toString();
 
-					JOptionPane.showMessageDialog(null, infoProducto, "Información del producto",
+					JOptionPane.showMessageDialog(null, infoProducto, "InformaciÃ³n del producto",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
@@ -184,8 +184,8 @@ public class VentanaComprar extends JFrame {
 
 	/**
 	 * @param cliente
-	 * @param numCategoria -> indica en el método anadirCarrito la letra correspondiente al tipo de producto
-	 * @param lista -> es una lista por si se añade más de un producto a la vez
+	 * @param numCategoria -> indica en el mï¿½todo anadirCarrito la letra correspondiente al tipo de producto
+	 * @param lista -> es una lista por si se aÃ±ade mÃ¡s de un producto a la vez
 	 */
 	
 	private void guardarProducto(Cliente cliente, int numCategoria, JList<String> lista) {

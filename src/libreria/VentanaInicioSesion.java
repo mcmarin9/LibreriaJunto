@@ -57,7 +57,7 @@ public class VentanaInicioSesion extends JFrame {
 		bienvenido = ComponentesVentana.crearLabel("BIENVENID@!", 420, 130, 450, 40, "#FFFFFF", true, jp);
 		bienvenido.setFont(new Font("ARIAL", Font.BOLD, 30));
 		mensaje = ComponentesVentana.crearMensajeArea(
-				"Introduzca su informacion personal para poder \n     disfrutar de una experiencia excepcional!", 375, 180,
+				"Introduzca su información personal para poder \n     disfrutar de una experiencia excepcional!", 375, 180,
 				290, 140, "Arial", 13,"#B2C5D0", "#FFFFFF");
 	
 		jp.add(mensaje);
@@ -127,11 +127,11 @@ public class VentanaInicioSesion extends JFrame {
 		            dispose();
 		        } else {
 		            errorNumRepe.setVisible(true);
-		            System.out.println("Error: n mero de registro repetido.");
+		            System.out.println("Error: número de registro repetido.");
 		        }
 		    } else {
 		        error.setVisible(true);
-		        System.out.println("Error: el n mero de tel fono debe tener 9 d gitos.");
+		        System.out.println("Error: el número de teléfono debe tener 9 dígitos.");
 		       
 		    }
 

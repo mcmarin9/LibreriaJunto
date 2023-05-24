@@ -9,8 +9,6 @@ import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -79,7 +77,7 @@ public class VentanaProductos extends JFrame {
 			
 			numProductos = cliente.mostrarListaCompra(areaProductos);
 			
-			txtCantidadProductos = ComponentesVentana.crearLabel("N�mero de productos: "+ (numProductos-1), 550, 80, 230, 20, "#000000", true, jp);
+			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: "+ (numProductos-1), 550, 80, 230, 20, "#000000", true, jp);
 			txtCantidadProductos.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
 			txtTotal = ComponentesVentana.crearLabel("Total: "  + total + " �", 550, 100, 140, 20, "#000000", true, jp);
 			txtTotal.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
@@ -93,8 +91,8 @@ public class VentanaProductos extends JFrame {
 					
 			        total = 0; 
 			        numProductos = 0; 
-			        txtCantidadProductos.setText("N�mero de productos: " + numProductos);
-			        txtTotal.setText("Total: " + total + " �");
+			        txtCantidadProductos.setText("Número de productos: " + numProductos);
+			        txtTotal.setText("Total: " + total + " €");
 			        areaProductos.setText("");
 					
 				}

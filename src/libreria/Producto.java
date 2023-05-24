@@ -77,8 +77,8 @@ public abstract class Producto {
 
 	@Override
 	public String toString() {
-		return "Codigo: " + codigo + " | " + "Nombre: " + nombre + " | " + "Desc: " + descripcion + "\n"
-				+ "Precio: " + precioUnidad + "€ | Stock: " + unidadesStock;
+		return "CÃ³digo: " + codigo + " | " + "Nombre: " + nombre + " | " + "Desc: " + descripcion + "\n"
+				+ "Precio: " + precioUnidad + "Stock: " + unidadesStock;
 	}
 
 	public abstract String generarCodigo();
@@ -107,7 +107,7 @@ public abstract class Producto {
 			}
 		}
 
-		System.out.println("No existe ningún producto con código " + codigo);
+		System.out.println("No existe ningï¿½n producto con cï¿½digo " + codigo);
 		return null;
 	}
 

@@ -60,7 +60,7 @@ public class Cliente {
 	}
 
 	/**
-	 * Comprueba si el cliente existe o no, y en caso de que no esté da la opción de registro.
+	 * Comprueba si el cliente existe o no, y en caso de que no estï¿½ da la opciï¿½n de registro.
 	 * @param n
 	 * @param tlf
 	 * @return
@@ -84,14 +84,14 @@ public class Cliente {
 
 		if (!encontrado) {
 			int respuesta = JOptionPane.showConfirmDialog(null,
-					"No se ha encontrado ningún cliente con esos datos. ¿Desea registrarlo en el sistema?",
-					"Confirmación", JOptionPane.YES_NO_OPTION);
+					"No se ha encontrado ningÃºn cliente con esos datos. Â¿Desea registrarlo en el sistema?",
+					"ConfirmaciÃ³n", JOptionPane.YES_NO_OPTION);
 			if (respuesta == JOptionPane.YES_OPTION) {
 				nuevoCliente = new Cliente(n, tlf);
 				return nuevoCliente;
 			} else if (respuesta == JOptionPane.NO_OPTION) {
 				JOptionPane.showMessageDialog(null,
-						"Para entrar a la tienda tienes que estár registrado. Por favor introduce un usuario y teléfono válidos o acepta el registro.");
+						"Para entrar a la tienda tienes que estar registrado. Por favor introduce un usuario y telÃ©fono vÃ¡lidos o acepta el registro.");
 			}
 		}
 		return null;
@@ -99,8 +99,8 @@ public class Cliente {
 	}
 
 	/**
-	 * Este método compone el código de producto formado por una letra y un número
-	 * de tres dígitos y llama a buscarProducto para que si existe el producto y si
+	 * Este mÃ©todo compone el cÃ³digo de producto formado por una letra y un nÃºmero
+	 * de tres dÃ­gitos y llama a buscarProducto para que si existe el producto y si
 	 * quedan unidades.
 	 * 
 	 * @param numCategoria
@@ -115,12 +115,12 @@ public class Cliente {
 
 		letraCodigo = LETRAS[numCategoria];
 		codigoProducto = letraCodigo + numProducto;
-		System.out.println("Codigo producto:" + codigoProducto);
+		System.out.println("CÃ³digo producto:" + codigoProducto);
 		productoEncontrado = Producto.buscarProducto(codigoProducto);
 
 		if (productoEncontrado != null) {
 			listaCompra.add(productoEncontrado);
-			System.out.println("Producto añadido a la lista de la compra.");
+			System.out.println("Producto aÃ±adido a la lista de la compra.");
 		}
 	}
 
@@ -129,12 +129,12 @@ public class Cliente {
 		int contador = 1;
 
 		if (getListaCompra().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "La lista de la compra está vacía");
+			JOptionPane.showMessageDialog(null, "La lista de la compra estÃ¡ vacÃ­a");
 		} else {
 			for (Producto productoEnLista : getListaCompra()) {
 				areaTexto.append("PRODUCTO " + contador + "\n");
 				areaTexto.append(productoEnLista.getCodigo() + "   -   " + productoEnLista.getNombre() + "\n");
-				areaTexto.append(Double.toString(productoEnLista.getPrecioUnidad()) + " €");
+				areaTexto.append(Double.toString(productoEnLista.getPrecioUnidad()) + " ï¿½");
 				contador++;
 				areaTexto.append(System.lineSeparator());
 			}
@@ -149,11 +149,11 @@ public class Cliente {
 
 		if (total != 0) {
 			JOptionPane.showMessageDialog(null,
-					"Gracias por su compra, el total es: " + Math.round(total * 100.0) / 100.0 + " €");
+					"Gracias por su compra, el total es: " + Math.round(total * 100.0) / 100.0 + " ï¿½");
 			getListaCompra().clear();
 
 		} else {
-			JOptionPane.showMessageDialog(null, "El carrito de la compra está vacío.", "Carrito vacio",
+			JOptionPane.showMessageDialog(null, "El carrito de la compra estÃ¡ vacÃ­o.", "Carrito vacio",
 					JOptionPane.ERROR_MESSAGE);
 		}
 

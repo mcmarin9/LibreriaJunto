@@ -41,7 +41,7 @@ public class VentanaCrearProducto extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setLayout(new GroupLayout(jp));
-		this.setName("A—ADIR PRODUCTO");
+		this.setName("A√ëADIR PRODUCTO");
 		jp.setBackground(Color.decode("#B1C5D0"));
 
 		this.setVisible(true);
@@ -73,7 +73,7 @@ public class VentanaCrearProducto extends JFrame {
 		txtCrear = ComponentesVentana.crearLabel("CREAR PRODUCTO", 140, 10, 110, 10, "#000000", true, jp);
 		
 		txtNombre = ComponentesVentana.crearLabel("Nombre", 135, 30, 95, 20, "#000000", true, jp);
-		txtDescripcion = ComponentesVentana.crearLabel("DescripciÛn", 135, 55, 95, 20, "#000000", true, jp);
+		txtDescripcion = ComponentesVentana.crearLabel("Descripci√≥n", 135, 55, 95, 20, "#000000", true, jp);
 		txtPrecioUnidad = ComponentesVentana.crearLabel("Precio Unidad", 135, 80, 95, 20, "#000000", true, jp);
 		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 135, 105, 95, 20, "#000000", true, jp);
 
@@ -89,7 +89,7 @@ public class VentanaCrearProducto extends JFrame {
 		txtConAnillas = ComponentesVentana.crearLabel("Con anillas", 175, 145, 95, 20, "#000000", false, jp);
 
 		
-		si = ComponentesVentana.crearRadioButton("SÕ", 0, 0, 60, 20, "#B1C5D0");
+		si = ComponentesVentana.crearRadioButton("S√ç", 0, 0, 60, 20, "#B1C5D0");
 		no = ComponentesVentana.crearRadioButton("NO", 70, 0, 60, 20, "#B1C5D0");
 		bg = ComponentesVentana.crearButtonGroup(si, no);
 		jpBool = ComponentesVentana.crearRadioButtons(si, no);
@@ -97,7 +97,7 @@ public class VentanaCrearProducto extends JFrame {
 		
 		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 10, 170, 95, 20, "#000000", false, jp);
 
-		txtTamano = ComponentesVentana.crearLabel("TamaÒo", 175, 170, 95, 20, "#000000", false, jp);
+		txtTamano = ComponentesVentana.crearLabel("Tama√±o", 175, 170, 95, 20, "#000000", false, jp);
 		campoTamano = ComponentesVentana.crearTextField(230, 175, 95, 20, false, true, "#F5F5F5", jp);
 
 		txtTipo = ComponentesVentana.crearLabel("Tipo", 10, 145, 95, 20, "#000000", false, jp);
@@ -110,7 +110,7 @@ public class VentanaCrearProducto extends JFrame {
 		txtEditorial = ComponentesVentana.crearLabel("Editorial", 10, 145, 95, 20, "#000000", false, jp);
 		campoEditorial = ComponentesVentana.crearTextField(80, 150, 95, 20, false, true, "#F5F5F5", jp);
 
-		txtTematica = ComponentesVentana.crearLabel("Tem·tica", 175, 145, 95, 20, "#000000", false, jp);
+		txtTematica = ComponentesVentana.crearLabel("Tem√°tica", 175, 145, 95, 20, "#000000", false, jp);
 		campoTematica = ComponentesVentana.crearTextField(230, 150, 95, 20, false, true, "#F5F5F5", jp);
 
 		txtAutor = ComponentesVentana.crearLabel("Autor", 10, 170, 95, 20, "#000000", false, jp);
@@ -146,7 +146,7 @@ public class VentanaCrearProducto extends JFrame {
 
 							if (no.isSelected() && Integer.parseInt(campoNum.getText()) != 0) {
 								JOptionPane.showMessageDialog(null,
-										"Es incompatible que el n˙mero de anillas con la condiciÛn \"No tiene anillas\".\nSe establecer· el valor 0 anillas.");
+										"Es incompatible que el nÔøΩmero de anillas con la condici√≥n \"No tiene anillas\".\nSe establecer√° el valor 0 anillas.");
 								campoNum.setText("0");
 							} else {
 								Carpeta carpetaNueva = new Carpeta(campoNombre.getText(), campoDescripcion.getText(),
@@ -178,7 +178,7 @@ public class VentanaCrearProducto extends JFrame {
 						limpiarCampos();
 
 					} catch (NumberFormatException e1) {
-						JOptionPane.showMessageDialog(null, "Tienes que introducir un n˙mero");
+						JOptionPane.showMessageDialog(null, "Tienes que introducir un n√∫mero");
 					}
 
 				}

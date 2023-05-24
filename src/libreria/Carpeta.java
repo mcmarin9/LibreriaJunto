@@ -66,8 +66,8 @@ public class Carpeta extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", conAnillas: " + conAnillas + ", numAnillas: " + numAnillas
-				+ ", tamaño: " + tamano + ", color:" + color + "\n---------------------------------------------------------------------------"+ "\n";
+		return super.toString() + ", Con anillas: " + conAnillas + ", Num anillas: " + numAnillas
+				+ ", TamaÃ±o: " + tamano + ", Color:" + color + "\n---------------------------------------------------------------------------"+ "\n";
 	}
 
 	@Override
