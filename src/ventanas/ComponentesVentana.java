@@ -1,4 +1,4 @@
-package libreria;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Font;

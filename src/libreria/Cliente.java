@@ -134,7 +134,7 @@ public class Cliente {
 			for (Producto productoEnLista : getListaCompra()) {
 				areaTexto.append("PRODUCTO " + contador + "\n");
 				areaTexto.append(productoEnLista.getCodigo() + "   -   " + productoEnLista.getNombre() + "\n");
-				areaTexto.append(Double.toString(productoEnLista.getPrecioUnidad()) + " �");
+				areaTexto.append(Double.toString(productoEnLista.getPrecioUnidad()) + " €");
 				contador++;
 				areaTexto.append(System.lineSeparator());
 			}
@@ -149,7 +149,7 @@ public class Cliente {
 
 		if (total != 0) {
 			JOptionPane.showMessageDialog(null,
-					"Gracias por su compra, el total es: " + Math.round(total * 100.0) / 100.0 + " �");
+					"Gracias por su compra, el total es: " + Math.round(total * 100.0) / 100.0 + " €");
 			getListaCompra().clear();
 
 		} else {

@@ -1,4 +1,4 @@
-package libreria;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -20,6 +20,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import libreria.Cliente;
 
 public class VentanaInicioSesion extends JFrame {
 

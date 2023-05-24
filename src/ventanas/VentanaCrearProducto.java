@@ -1,4 +1,4 @@
-package libreria;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -19,6 +19,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+
+import libreria.Boligrafo;
+import libreria.Carpeta;
+import libreria.Estuche;
+import libreria.Libreta;
+import libreria.Libro;
 
 public class VentanaCrearProducto extends JFrame {
 

@@ -1,4 +1,4 @@
-package libreria;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
+import libreria.Cliente;
 
 
 public class VentanaPrincipal extends JFrame {
@@ -168,12 +170,12 @@ public class VentanaPrincipal extends JFrame {
         
         
 
-		//NOMBRE LIBRERÍA	
+		//NOMBRE LIBRERï¿½A	
 		nombre = ComponentesVentana.crearLabel("The Meow Desk", 65, 145, 380, 60, "#6384A6", true, jp);
 		nombre.setFont(new Font("Georgia Pro", Font.BOLD, 45));
         
 		
-		//AÑADIR PRODUCTOS
+		//Aï¿½ADIR PRODUCTOS
 		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 200, 230, 150, 40, 15, "#6384A6", jp);
 		btnCrearProducto.setVisible(false);
 		

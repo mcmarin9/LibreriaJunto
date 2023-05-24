@@ -1,4 +1,4 @@
-package libreria;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +17,14 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+
+import libreria.Boligrafo;
+import libreria.Carpeta;
+import libreria.Cliente;
+import libreria.Estuche;
+import libreria.Libreta;
+import libreria.Libro;
+import libreria.Producto;
 
 public class VentanaComprar extends JFrame {
 
