@@ -26,7 +26,8 @@ public class VentanaComprar extends JFrame {
 	private JLabel txtPrincipal, txtSeleccionar;
 
 	public VentanaComprar(Cliente cliente) {
-
+		super("COMPRAR");
+		
 		jp = new JPanel();
 
 		this.setContentPane(jp);
@@ -39,7 +40,7 @@ public class VentanaComprar extends JFrame {
 		txtPrincipal = ComponentesVentana.crearLabel("COMPRAR",320, 60, 180, 25, "#000000", true, jp);
 		txtPrincipal.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		txtPrincipal = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado CONTROL.",15, 315, 540, 25, "#000000", true, jp);
+		txtPrincipal = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado CONTROL.",15, 315, 540, 24, "#000000", true, jp);
 		txtPrincipal.setFont(new Font("Arial", Font.ITALIC, 16));
 		
 		

@@ -28,7 +28,7 @@ public class VentanaProductos extends JFrame {
 
 	public VentanaProductos(Cliente cliente, String opcion) {
 
-		super();
+		super(opcion);
 
 		JPanel jp = new JPanel();
 		jp.setLayout(new GroupLayout(jp));

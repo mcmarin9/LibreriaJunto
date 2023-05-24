@@ -33,7 +33,7 @@ public class VentanaCrearProducto extends JFrame {
 	private JRadioButton si, no;
 
 	public VentanaCrearProducto() {
-
+		super("CREAR PRODUCTO");
 		jp = new JPanel();
 
 		this.setContentPane(jp);
