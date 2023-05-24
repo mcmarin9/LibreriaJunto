@@ -2,7 +2,6 @@ package libreria;
 
 public class Boligrafo extends Producto {
 
-	
 	private boolean puntaFina;
 	private String color;
 
