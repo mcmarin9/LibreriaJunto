@@ -76,6 +76,10 @@ public class VentanaProductos extends JFrame {
 
 		numProductos = 0;
 		total = cliente.precioTotal();
+		
+		// BORRAR PRODUCTO DEL CARRITO
+		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 600, 250, 140, 20, 20, "#D4B49F", jp);
+		btnBorrar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
 
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
 			Producto.mostrarProductos(areaProductos);
@@ -105,9 +109,6 @@ public class VentanaProductos extends JFrame {
 
 				}
 			});
-			// BORRAR PRODUCTO DEL CARRITO
-			btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 600, 250, 140, 20, 20, "#D4B49F", jp);
-			btnBorrar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
 			
 			btnBorrar.addActionListener(new ActionListener() {
 
