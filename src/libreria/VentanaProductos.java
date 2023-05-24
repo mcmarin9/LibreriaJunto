@@ -20,7 +20,7 @@ public class VentanaProductos extends JFrame {
 	private JLabel listaProductos, txtCantidadProductos, txtTotal;
 	private JButton btnMenu, btnPagar;
 	private JTextArea areaProductos;
-	private JPanel areaP;
+	private JPanel areaColor;
 	private JScrollPane scroll;
 	
 	private int numProductos; 
@@ -36,18 +36,18 @@ public class VentanaProductos extends JFrame {
 
 		jp.setBackground(Color.decode("#F1F0EE"));
 
-		areaP = new JPanel();
-		areaP.setBounds(0, 0, 850, 55);
-		areaP.setBackground(Color.decode("#D4B49F"));
-		jp.add(areaP);
+		areaColor = new JPanel();
+		areaColor.setBounds(0, 0, 850, 55);
+		areaColor.setBackground(Color.decode("#D4B49F"));
+		jp.add(areaColor);
 
 		listaProductos = ComponentesVentana.crearLabel(opcion, 100, 17, 200, 20, "#F1F0EE", true, jp);
 		listaProductos.setFont(new Font("Verdana", Font.BOLD, 16));
 
-		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 400, 400, "#FFFFFF", "#000000");
+		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "#FFFFFF", "#000000");
 
 		scroll = new JScrollPane(areaProductos);
-		scroll.setBounds(100, 100, 400, 300);
+		scroll.setBounds(100, 100, 450, 300);
 		this.add(scroll);
 
 		// MENU

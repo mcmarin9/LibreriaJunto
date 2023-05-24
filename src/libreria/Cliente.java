@@ -59,6 +59,13 @@ public class Cliente {
 		return "Cliente [n=" + nombre + ", telefono=" + telefono + ", listaCompra=" + listaCompra + "]";
 	}
 
+	/**
+	 * Comprueba si el cliente existe o no, y en caso de que no esté da la opción de registro.
+	 * @param n
+	 * @param tlf
+	 * @return
+	 */
+	
 	public static Cliente iniciarSesion(String n, String tlf) {
 		boolean encontrado = false;
 		Cliente nuevoCliente = null;
