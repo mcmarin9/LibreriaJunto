@@ -9,7 +9,6 @@ public class Principal {
 			VentanaInicioSesion vis = new VentanaInicioSesion();
 		}
 
-		// MIRA A VERSI TE SALE
 		System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
 		System.out.println("-*       USUARIO ADMINISTRADOR:       -*");
 		System.out.println("-*                 admin              -*");
