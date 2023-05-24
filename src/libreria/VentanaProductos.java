@@ -90,10 +90,12 @@ public class VentanaProductos extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 
 					cliente.pagar();
+					
 			        total = 0; 
 			        numProductos = 0; 
 			        txtCantidadProductos.setText("Número de productos: " + numProductos);
 			        txtTotal.setText("Total: " + total + " €");
+			        areaProductos.setText("");
 					
 				}
 			});
