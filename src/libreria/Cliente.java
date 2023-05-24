@@ -8,12 +8,10 @@ import javax.swing.JTextArea;
 public class Cliente {
 	private String nombre;
 	private String telefono;
-
 	private ArrayList<Producto> listaCompra;
 	private static ArrayList<Cliente> listaClientes = new ArrayList<>();
 
 	public Cliente() {
-
 	}
 
 	public Cliente(String nombre, String telefono) {
@@ -70,7 +68,7 @@ public class Cliente {
 				encontrado = true;
 				cliente = null;
 				return cliente;
-				
+
 			} else if (n.equalsIgnoreCase(cliente.getNombre()) && tlf.equalsIgnoreCase(cliente.getTelefono())) {
 				encontrado = true;
 				return cliente;
@@ -88,15 +86,16 @@ public class Cliente {
 				JOptionPane.showMessageDialog(null,
 						"Para entrar a la tienda tienes que estár registrado. Por favor introduce un usuario y teléfono válidos o acepta el registro.");
 			}
-
 		}
 		return null;
 
 	}
 
 	/**
-	 * Este método compone el código de producto formado por una letra y un número de tres dígitos y 
-	 * llama a buscarProducto para que si existe el producto y si quedan unidades. 
+	 * Este método compone el código de producto formado por una letra y un número
+	 * de tres dígitos y llama a buscarProducto para que si existe el producto y si
+	 * quedan unidades.
+	 * 
 	 * @param numCategoria
 	 * @param numProducto
 	 */
@@ -126,16 +125,15 @@ public class Cliente {
 			JOptionPane.showMessageDialog(null, "La lista de la compra está vacía");
 		} else {
 			for (Producto productoEnLista : getListaCompra()) {
-				areaTexto.append("PRODUCTO " + contador
-						+ "\n");
+				areaTexto.append("PRODUCTO " + contador + "\n");
 				areaTexto.append(productoEnLista.getCodigo() + "   -   " + productoEnLista.getNombre() + "\n");
 				areaTexto.append(Double.toString(productoEnLista.getPrecioUnidad()) + " €");
 				contador++;
 				areaTexto.append(System.lineSeparator());
 			}
 		}
-		
-		return contador; 
+
+		return contador;
 	}
 
 	public double pagar() {
@@ -164,7 +162,5 @@ public class Cliente {
 		}
 		return total;
 	}
-	
-	
 
 }

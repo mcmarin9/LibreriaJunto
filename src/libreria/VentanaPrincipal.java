@@ -22,11 +22,8 @@ import javax.swing.JPanel;
 public class VentanaPrincipal extends JFrame {
 
 	private JLabel nombre, fotoGatito, iconos, iconos2, usuarioIcono, usuarioBienvenido;
-
 	private JButton btnCrearProducto, btnSalir;
-	
 	private JMenuBar menuBar;
- //   private JMenu MenuCambiarUsuario, menu2, menu3;
     private JMenuItem menuCambiarUsuario, menuMiCesta, menuComprar, menuVerProductos, menuMensajeBienvenido;
 	
 	
@@ -162,8 +159,7 @@ public class VentanaPrincipal extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-
+			
 				VentanaProductos vCesta = new VentanaProductos(cliente, "CARRITO");
 				
 				
@@ -175,12 +171,10 @@ public class VentanaPrincipal extends JFrame {
 		//NOMBRE LIBRERÍA	
 		nombre = ComponentesVentana.crearLabel("The Meow Desk", 65, 145, 380, 60, "#6384A6", true, jp);
 		nombre.setFont(new Font("Georgia Pro", Font.BOLD, 45));
-	//	jp.add(nombre);
         
 		
 		//AÑADIR PRODUCTOS
 		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 200, 230, 150, 40, 15, "#6384A6", jp);
-//		jp.add(btnCrearProducto);
 		btnCrearProducto.setVisible(false);
 		
 		if (cliente.getNombre().equalsIgnoreCase("Admin") && (cliente.getTelefono().equalsIgnoreCase("987654321"))) {
@@ -199,8 +193,6 @@ public class VentanaPrincipal extends JFrame {
 		// SALIR DE LA APLICACION
         btnSalir = ComponentesVentana.crearBoton("SALIR", 715, 410, 100, 20, 12, "#6384A6", jp);
 		btnSalir.setFont(new Font("Calibri", Font.PLAIN, 13));
-		//opcion6.setVisible(false);
-//		jp.add(btnSalir);
 
 		btnSalir.addActionListener(new ActionListener() {
 
