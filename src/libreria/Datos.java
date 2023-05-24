@@ -3,7 +3,7 @@ package libreria;
 public class Datos {
 
 	public static void inicializar() {
-//pruebas
+//pruebas2
 		Boligrafo b1 = new Boligrafo("Super pen 1002", "�ltimo modelo", 1.99, 5, true, "azul");
 		Boligrafo b2 = new Boligrafo("Boligrafo negro simple", "chulo", 2.50, 3, true, "negro");
 		Boligrafo b3 = new Boligrafo("Boli rojo", "el de las profes", 0.50, 2, false, "rojo");
