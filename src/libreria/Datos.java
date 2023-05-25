@@ -25,13 +25,13 @@ public class Datos {
 		Libreta lt6 = new Libreta("Libreta pequeña", "libreta normal", 2.00, 2, 30, "A5", "negro");
 
 		Libro l1 = new Libro("Harry Potter y la cámara secreta", "Segundo libro de la saga", 15.99, 2, "Salamandara",
-				"Fantas�a", "JK Rowling");
-		Libro l2 = new Libro("Moby Dick", "El de la ballena", 5.99, 1, "Alfaguara", "Aventuras", "Herman Melville");
+				"Fantasía", "JK Rowling");
+		Libro l2 = new Libro("La canción de Aquiles", "Sobre Aquiles y Patroclo",20, 1, "Alianza Editorial", "Novela bélica", "Madeline Miller");
 		Libro l3 = new Libro("It", "El payaso", 10, 1, "DeBolsillo",
 				"Terror", "Stephen King");
-		Libro l4 = new Libro("Siega", "De la Parca", 12.95, 5, "Nocturna", "Juvenil", "Neal Shutersman");
+		Libro l4 = new Libro("Siega", "De la muerte y la parca", 12.95, 5, "Nocturna", "Juvenil", "Neal Shutersman");
 		Libro l5 = new Libro("Orgullo y prejuicio", "Clasicazo", 6, 7, "Alma",
-				"Rom�mtico", "Jane Austen");
+				"Romántico", "Jane Austen");
 		Libro l6 = new Libro("El tiempo entre costuras", "Ambientado en la Guerra Civil", 22, 3, "Planeta ", "Novela Histórica", "María Dueñas");
 
 		Estuche e1 = new Estuche("Estuche de Spiderman", "Estuche de lápices de spiderman", 10, 2, "lápices", 24);
@@ -39,13 +39,13 @@ public class Datos {
 				"rotuladores", 20);
 		Estuche e3 = new Estuche("Estuche Mickey", "Mikey Mouse", 8, 4, "rotuladores", 12);
 		Estuche e4 = new Estuche("Estuche de gatitos", "Superventas", 15.50, 4,
-				"l�pices", 36);
+				"lápices", 36);
 		Estuche e5 = new Estuche("Estuche básico", "Lo mínimo", 5, 12, "témperas", 8);
 		Estuche e6 = new Estuche("Estuche vacío", "Para lápices", 2, 3,
-				"l�pices", 10);
+				"lápices", 10);
 		Estuche e7 = new Estuche("Estuche azul", "Con 15 tonos de azul", 22, 4, "témperas", 22);
 		Estuche e8 = new Estuche("Estuche pastel", "Solo tiene tonos pastel", 15, 0,
-				"t�mperas", 12);
+				"támperas", 12);
 
 		Cliente cl1 = new Cliente("Ana", "123456789");
 		Cliente cl2 = new Cliente("Manolo", "963852741");

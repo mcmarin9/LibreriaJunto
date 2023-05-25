@@ -1,4 +1,4 @@
-package ventanas;
+package libreria;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -17,16 +17,16 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-
-import libreria.Cliente;
 
 
 public class VentanaPrincipal extends JFrame {
 
-	private JLabel nombre, fotoGatito, iconos, iconos2;
+	private JLabel nombre, fotoGatito, iconos, iconos2, usuarioIcono, usuarioBienvenido;
+
 	private JButton btnCrearProducto, btnSalir;
+	
 	private JMenuBar menuBar;
+ //   private JMenu MenuCambiarUsuario, menu2, menu3;
     private JMenuItem menuCambiarUsuario, menuMiCesta, menuComprar, menuVerProductos, menuMensajeBienvenido;
 	
 	
@@ -43,8 +43,8 @@ public class VentanaPrincipal extends JFrame {
 
 
 		//IMAGEN GATITO
-		Image imagenGatito = null;
 		
+		Image imagenGatito = null;
         try {
             URL url = new URL("https://i.ibb.co/tbQQLHf/gatitolibros.png");
             imagenGatito = ImageIO.read(url);
@@ -53,64 +53,48 @@ public class VentanaPrincipal extends JFrame {
         }
 
 
-		ImageIcon redimensionada1 = new ImageIcon(imagenGatito.getScaledInstance(210,280, Image.SCALE_AREA_AVERAGING));
+		ImageIcon redimensionada1 = new ImageIcon(imagenGatito.getScaledInstance(230,280, Image.SCALE_AREA_AVERAGING));
+		
 		fotoGatito = new JLabel(redimensionada1);
-		fotoGatito.setBounds(440, 90, 210, 280);
+		fotoGatito.setBounds(600, 170, 230, 280);
 		jp.add(fotoGatito);
 		
 		
-		// ICONOS
+		// ICONOS REDES SOCIALES Y NOMBRE 
+		/*
+		ImageIcon imgIconos = new ImageIcon("C:\\Users\\pqtri\\Downloads\\iconos.png");
+		Image imgIconosOriginal = imgIconos.getImage();
+		ImageIcon redimensionada2 = new ImageIcon(imgIconosOriginal.getScaledInstance(100, 90, Image.SCALE_SMOOTH));
 		
-		Image imagenIconos = null;
-		
-        try {
-            URL url = new URL("https://i.ibb.co/Rj1M7dh/iconos-Redes.png");
-            imagenIconos = ImageIO.read(url);
-        } 
-        catch (IOException e) {
-        }
-        
-        ImageIcon redimensionada2 = new ImageIcon(imagenIconos.getScaledInstance(90, 90, Image.SCALE_SMOOTH));
 		iconos = new JLabel(redimensionada2);
-		iconos.setBounds(700, 320, 90, 90);
+		iconos.setBounds(70, 360, 100, 100);
 		jp.add(iconos);
-		
-		
-		iconos2 = ComponentesVentana.crearLabel("@themeowdesk", 705, 340, 100, 100, "#000000", true, jp );
+
+		iconos2 = new JLabel("@themeowdesk");
+		iconos2 = crearEtiqueta(iconos2, 75, 385, 100, 100, "#000000" );
 		iconos2.setFont(new Font("Calibri", Font.PLAIN, 13));
 		jp.add(iconos2);
 		
 		
-		//NOMBRE LIBRER√çA	
-		nombre = ComponentesVentana.crearLabel("THE MEOW", 65, 110, 380, 60, "#6384A6", true, jp);
-		nombre.setFont(new Font("Gill Sans MT", Font.BOLD, 45));
-		nombre = ComponentesVentana.crearLabel("DESK", 65, 170, 380, 60, "#6384A6", true, jp);
-		nombre.setFont(new Font("Gill Sans MT", Font.BOLD, 45));
+		*/
 		
-		
-		// RAYA
-		JSeparator separador = ComponentesVentana.crearSeparador(65, 230, 130, 20, "#6384A6");
-		jp.add(separador);
-		
-		
-		//MENU		
+		//MENU
+
         menuBar=new JMenuBar();
         setJMenuBar(menuBar);
-        menuBar.setPreferredSize(new Dimension(menuBar.getWidth(), 45));
+        menuBar.setPreferredSize(new Dimension(menuBar.getWidth(), 55));
         
-        // mensaje bienvenida
-        menuMensajeBienvenido = new JMenuItem("         BIENVENID@ " + cliente.getNombre().toUpperCase());
-        menuMensajeBienvenido.setBackground(Color.decode("#6384A6"));
-        menuMensajeBienvenido.setForeground(Color.decode("#F1F0EE"));
-        menuMensajeBienvenido.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
-        //menuMensajeBienvenido.setBounds(30, 10, 100, 20);
+        menuMensajeBienvenido = new JMenuItem("BIENVENIDO " + cliente.getNombre().toUpperCase());
+        menuMensajeBienvenido.setBackground(Color.decode("#FFFFFF"));
+        menuMensajeBienvenido.setForeground(Color.decode("#FFFFFF"));
+        menuMensajeBienvenido.setEnabled(false);
         menuBar.add(menuMensajeBienvenido);
         
-        // cambiar usuario
-        menuCambiarUsuario=new JMenuItem("            CAMBIAR USUARIO");
+        
+
+        menuCambiarUsuario=new JMenuItem("CAMBIAR USUARIO");
         menuCambiarUsuario.setBackground(Color.decode("#6384A6"));
-        menuCambiarUsuario.setForeground(Color.decode("#F1F0EE"));
-        menuCambiarUsuario.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
+        menuCambiarUsuario.setForeground(Color.decode("#FFFFFF"));
         menuBar.add(menuCambiarUsuario);
         menuCambiarUsuario.addActionListener(new ActionListener() {
 			
@@ -136,10 +120,9 @@ public class VentanaPrincipal extends JFrame {
         		menuBar.add(usuarioIcono);*/
         		
 
-        menuVerProductos = new JMenuItem("            VER PRODUCTOS");
+        menuVerProductos = new JMenuItem("VER PRODUCTOS");
         menuVerProductos.setBackground(Color.decode("#6384A6"));
         menuVerProductos.setForeground(Color.decode("#FFFFFF"));
-        menuVerProductos.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
         menuBar.add(menuVerProductos);
 
         menuVerProductos.addActionListener(new ActionListener() {
@@ -153,10 +136,9 @@ public class VentanaPrincipal extends JFrame {
 		});
 		
 
-        menuComprar = new JMenuItem("            COMPRAR");
+        menuComprar = new JMenuItem("COMPRAR");
         menuComprar.setBackground(Color.decode("#6384A6"));
         menuComprar.setForeground(Color.decode("#FFFFFF"));
-        menuComprar.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
         menuBar.add(menuComprar);
 
         menuComprar.addActionListener(new ActionListener() {
@@ -170,28 +152,36 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
         
-        menuMiCesta = new JMenuItem("                    MI CESTA");
+        menuMiCesta = new JMenuItem("MI CESTA");
         menuMiCesta.setBackground(Color.decode("#6384A6"));
         menuMiCesta.setForeground(Color.decode("#FFFFFF"));
-        menuMiCesta.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
+
         menuBar.add(menuMiCesta);
 
         menuMiCesta.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				
+
 				VentanaProductos vCesta = new VentanaProductos(cliente, "CARRITO");
 				
 				
 			}
 		});
         
+        
+
+		//NOMBRE LIBRERÕA	
+		nombre = ComponentesVentana.crearLabel("The Meow Desk", 65, 145, 380, 60, "#6384A6", true, jp);
+		nombre.setFont(new Font("Georgia Pro", Font.BOLD, 45));
+	//	jp.add(nombre);
+        
 		
-		//A ADIR PRODUCTOS
+		//A—ADIR PRODUCTOS
 		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 200, 230, 150, 40, 15, "#6384A6", jp);
+//		jp.add(btnCrearProducto);
 		btnCrearProducto.setVisible(false);
-		
 		
 		if (cliente.getNombre().equalsIgnoreCase("Admin") && (cliente.getTelefono().equalsIgnoreCase("987654321"))) {
 
@@ -207,8 +197,10 @@ public class VentanaPrincipal extends JFrame {
 
         
 		// SALIR DE LA APLICACION
-        btnSalir = ComponentesVentana.crearBoton("SALIR", 20, 390, 100, 20, 12, "#6384A6", jp);
+        btnSalir = ComponentesVentana.crearBoton("SALIR", 715, 410, 100, 20, 12, "#6384A6", jp);
 		btnSalir.setFont(new Font("Calibri", Font.PLAIN, 13));
+		//opcion6.setVisible(false);
+//		jp.add(btnSalir);
 
 		btnSalir.addActionListener(new ActionListener() {
 
@@ -217,6 +209,8 @@ public class VentanaPrincipal extends JFrame {
 				dispose();
 			}
 		});
+		
+		
 		
 		
 
