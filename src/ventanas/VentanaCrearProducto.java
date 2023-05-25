@@ -101,7 +101,7 @@ public class VentanaCrearProducto extends JFrame {
 		bg = ComponentesVentana.crearButtonGroup(si, no);
 		jpBool = ComponentesVentana.crearPanelRadioButton(si, no);
 		jp.add(jpBool);
-		//
+		
 		//estas 3 etiquetas utilizan el mismo jtextfield porque son iguales en su funcionamiento
 		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 175, 170, 100, 25, "#000000", false, jp);
 		txtNumColores = ComponentesVentana.crearLabel("Num colores", 175, 170, 100, 25, "#000000", false, jp);
