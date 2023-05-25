@@ -90,8 +90,6 @@ public class VentanaCrearProducto extends JFrame {
 		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 395, 100, 100, 25, "#000000", true, jp);
 		campoUnidadesStock = ComponentesVentana.crearTextField(495, 100, 100, 25, true, false, "#F5F5F5", jp);
 
-		
-		
 		txtColor = ComponentesVentana.crearLabel("Color", 175, 135, 100, 25, "#000000", false, jp);
 		campoColor = ComponentesVentana.crearTextField(275, 135, 100, 25, false, true, "#F5F5F5", jp);
 		

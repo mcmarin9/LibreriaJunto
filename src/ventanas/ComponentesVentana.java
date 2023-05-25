@@ -84,7 +84,6 @@ public class ComponentesVentana {
 		txtArea.setBackground(Color.decode(color));
 		txtArea.setForeground(Color.decode(colorLetra));
 		txtArea.setEditable(false);
-
 		return txtArea;
 	}
 
