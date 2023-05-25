@@ -28,7 +28,7 @@ import libreria.Libro;
 
 public class VentanaCrearProducto extends JFrame {
 
-	private JPanel jp, jpBool;
+	private JPanel jp, jpBool, areaColor;
 	private JComboBox<String> listaProductos;
 	private JButton crearProducto;
 	private JTextField campoNombre, campoDescripcion, campoPrecioUnidad, campoUnidadesStock, campoColor, campoTipo,
@@ -50,9 +50,16 @@ public class VentanaCrearProducto extends JFrame {
 		jp.setBackground(Color.decode("#B1C5D0"));
 
 		this.setVisible(true);
+		
+		
+		areaColor = new JPanel();
+		areaColor.setBounds(0, 0, 700, 45);
+		areaColor.setBackground(Color.decode("#FFFFFF"));
+		jp.add(areaColor);
+
 
 		listaProductos = new JComboBox<String>();
-		listaProductos.setBounds(25, 50, 120, 20);
+		listaProductos.setBounds(25,100, 120, 20);
 		add(listaProductos);
 
 		listaProductos.addItem("---------");
@@ -75,27 +82,28 @@ public class VentanaCrearProducto extends JFrame {
 
 		jp.add(listaProductos);
 		
-		txtCrear = ComponentesVentana.crearLabel("CREAR PRODUCTO", 280, 15, 180, 25, "#000000", true, jp);
-		txtCrear.setFont(new Font("Verdana", Font.BOLD, 16));
+		txtCrear = ComponentesVentana.crearLabel("CREAR PRODUCTO", 260, 10, 180, 25, "#FFFFFF", true, jp);
+		txtCrear.setFont(new Font("Gill Sans MT", Font.BOLD, 16));
+		txtCrear.setForeground(Color.decode("#B1C5D0"));
 
-		txtNombre = ComponentesVentana.crearLabel("Nombre", 175, 65, 100, 25, "#000000", true, jp);
-		campoNombre = ComponentesVentana.crearTextField(275, 65, 100, 25, true, false, "#F5F5F5", jp);
+		txtNombre = ComponentesVentana.crearLabel("Nombre", 175, 95, 100, 25, "#000000", true, jp);
+		campoNombre = ComponentesVentana.crearTextField(275, 95, 100, 25, true, false, "#F5F5F5", jp);
 
-		txtPrecioUnidad = ComponentesVentana.crearLabel("Precio Unidad", 395, 65, 100, 25, "#000000", true, jp);
-		campoPrecioUnidad = ComponentesVentana.crearTextField(495, 65, 100, 25, true, false, "#F5F5F5", jp);
+		txtPrecioUnidad = ComponentesVentana.crearLabel("Precio Unidad", 395, 95, 100, 25, "#000000", true, jp);
+		campoPrecioUnidad = ComponentesVentana.crearTextField(495, 95, 100, 25, true, false, "#F5F5F5", jp);
 
-		txtDescripcion = ComponentesVentana.crearLabel("Descripción", 175, 100, 100, 25, "#000000", true, jp);
-		campoDescripcion = ComponentesVentana.crearTextField(275, 100, 100, 25, true, false, "#F5F5F5", jp);
+		txtDescripcion = ComponentesVentana.crearLabel("Descripción", 175, 130, 100, 25, "#000000", true, jp);
+		campoDescripcion = ComponentesVentana.crearTextField(275, 130, 100, 25, true, false, "#F5F5F5", jp);
 
-		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 395, 100, 100, 25, "#000000", true, jp);
-		campoUnidadesStock = ComponentesVentana.crearTextField(495, 100, 100, 25, true, false, "#F5F5F5", jp);
+		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 395, 130, 100, 25, "#000000", true, jp);
+		campoUnidadesStock = ComponentesVentana.crearTextField(495, 130, 100, 25, true, false, "#F5F5F5", jp);
 
-		txtColor = ComponentesVentana.crearLabel("Color", 175, 135, 100, 25, "#000000", false, jp);
-		campoColor = ComponentesVentana.crearTextField(275, 135, 100, 25, false, true, "#F5F5F5", jp);
+		txtColor = ComponentesVentana.crearLabel("Color", 175, 165, 100, 25, "#000000", false, jp);
+		campoColor = ComponentesVentana.crearTextField(275, 165, 100, 25, false, true, "#F5F5F5", jp);
 		
 		//se reutiliza la misma opción de radio button para ambos productos
-		txtPuntaFina = ComponentesVentana.crearLabel("Punta fina", 395, 135, 100, 25, "#000000", false, jp);
-		txtConAnillas = ComponentesVentana.crearLabel("Con anillas", 395, 135, 100, 25, "#000000", false, jp);
+		txtPuntaFina = ComponentesVentana.crearLabel("Punta fina", 395, 165, 100, 25, "#000000", false, jp);
+		txtConAnillas = ComponentesVentana.crearLabel("Con anillas", 395, 165, 100, 25, "#000000", false, jp);
 		si = ComponentesVentana.crearRadioButton("SÍ", 0, 0, 50, 25, "#B1C5D0");
 		no = ComponentesVentana.crearRadioButton("NO", 50, 0, 50, 25, "#B1C5D0");
 		bg = ComponentesVentana.crearButtonGroup(si, no);
@@ -103,27 +111,29 @@ public class VentanaCrearProducto extends JFrame {
 		jp.add(jpBool);
 		
 		//estas 3 etiquetas utilizan el mismo jtextfield porque son iguales en su funcionamiento
-		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 175, 170, 100, 25, "#000000", false, jp);
-		txtNumColores = ComponentesVentana.crearLabel("Num colores", 175, 170, 100, 25, "#000000", false, jp);
-		txtNumHojas = ComponentesVentana.crearLabel("Num hojas", 175, 170, 100, 25, "#000000", false, jp);
-		campoNum = ComponentesVentana.crearTextField(275, 170, 100, 25, false, true, "#F5F5F5", jp);
+		txtNumAnillas = ComponentesVentana.crearLabel("Num anillas", 175, 200, 100, 25, "#000000", false, jp);
+		txtNumColores = ComponentesVentana.crearLabel("Num colores", 175, 200, 100, 25, "#000000", false, jp);
+		txtNumHojas = ComponentesVentana.crearLabel("Num hojas", 175, 200, 100, 25, "#000000", false, jp);
+		campoNum = ComponentesVentana.crearTextField(275, 200, 100, 25, false, true, "#F5F5F5", jp);
 
-		txtTamano = ComponentesVentana.crearLabel("Tamaño", 395, 170, 100, 25, "#000000", false, jp);
-		campoTamano = ComponentesVentana.crearTextField(495, 170, 100, 25, false, true, "#F5F5F5", jp);
+		txtTamano = ComponentesVentana.crearLabel("Tamaño", 395, 200, 100, 25, "#000000", false, jp);
+		campoTamano = ComponentesVentana.crearTextField(495, 200, 100, 25, false, true, "#F5F5F5", jp);
 
-		txtTipo = ComponentesVentana.crearLabel("Tipo", 175, 135, 100, 25, "#000000", false, jp);
-		campoTipo = ComponentesVentana.crearTextField(275, 135, 100, 25, false, true, "#F5F5F5", jp);
+		txtTipo = ComponentesVentana.crearLabel("Tipo", 175, 165, 100, 25, "#000000", false, jp);
+		campoTipo = ComponentesVentana.crearTextField(275, 165, 100, 25, false, true, "#F5F5F5", jp);
 
-		txtEditorial = ComponentesVentana.crearLabel("Editorial", 175, 135, 100, 25, "#000000", false, jp);
-		campoEditorial = ComponentesVentana.crearTextField(275, 135, 100, 25, false, true, "#F5F5F5", jp);
+		txtEditorial = ComponentesVentana.crearLabel("Editorial", 175, 165, 100, 25, "#000000", false, jp);
+		campoEditorial = ComponentesVentana.crearTextField(275, 165, 100, 25, false, true, "#F5F5F5", jp);
 
-		txtTematica = ComponentesVentana.crearLabel("Temática", 395, 135, 100, 25, "#000000", false, jp);
-		campoTematica = ComponentesVentana.crearTextField(495, 135, 100, 25, false, true, "#F5F5F5", jp);
+		txtTematica = ComponentesVentana.crearLabel("Temática", 395, 165, 100, 25, "#000000", false, jp);
+		campoTematica = ComponentesVentana.crearTextField(495, 165, 100, 25, false, true, "#F5F5F5", jp);
 
-		txtAutor = ComponentesVentana.crearLabel("Autor", 175, 170, 100, 25, "#000000", false, jp);
-		campoAutor = ComponentesVentana.crearTextField(275, 170, 100, 25, false, true, "#F5F5F5", jp);
+		txtAutor = ComponentesVentana.crearLabel("Autor", 175, 200, 100, 25, "#000000", false, jp);
+		campoAutor = ComponentesVentana.crearTextField(275, 200, 100, 25, false, true, "#F5F5F5", jp);
 
-		crearProducto = ComponentesVentana.crearBoton("CREAR", 350, 215, 85, 25, 12, "#FFFFFF", jp);
+		
+		crearProducto = ComponentesVentana.crearBoton("CREAR", 300, 265, 85, 25, 12, "#FFFFFF", jp);
+		crearProducto.setForeground(Color.decode("#B1C5D0"));
 
 		crearProducto.addActionListener(new ActionListener() {
 
@@ -193,6 +203,9 @@ public class VentanaCrearProducto extends JFrame {
 			}
 
 		});
+		
+		jp.setComponentZOrder(txtCrear, 0);
+
 	}
 
 	private void actualizarCampos() {

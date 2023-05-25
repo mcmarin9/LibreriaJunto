@@ -54,7 +54,7 @@ public class ComponentesVentana {
 			JPanel jp) {
 		JButton boton = new JButton(texto);
 		boton.setBounds(x, y, ancho, alto);
-		boton.setFont(new Font("Arial", Font.BOLD, tamanoLetra));
+		boton.setFont(new Font("Gill Sans MT", Font.BOLD, tamanoLetra));
 		boton.setBackground(Color.decode(color));
 		boton.setBorder(null);
 		jp.add(boton);
@@ -99,9 +99,10 @@ public class ComponentesVentana {
 		JPanel jpBool = new JPanel();
 		jpBool.setLayout(null);
 		jpBool.setBackground(Color.decode("#B1C5D0"));
-		jpBool.setBounds(495, 135, 100, 25);
+		jpBool.setBounds(495, 165, 100, 25);
 		jpBool.add(si);
 		jpBool.add(no);
+		jpBool.setLayout(null);
 		jpBool.setVisible(false);
 		return jpBool;
 	}
