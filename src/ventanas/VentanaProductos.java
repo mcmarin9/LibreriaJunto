@@ -33,21 +33,20 @@ public class VentanaProductos extends JFrame {
 	public VentanaProductos(Cliente cliente, String opcion) {
 
 		super(opcion);
-
 		JPanel jp = new JPanel();
 		jp.setLayout(new GroupLayout(jp));
 		this.setResizable(false);
 		this.setContentPane(jp);
 
 		jp.setBackground(Color.decode("#F1F0EE"));
-
+		
 		areaColor = new JPanel();
 		areaColor.setBounds(0, 0, 850, 55);
-		areaColor.setBackground(Color.decode("#D4B49F"));
+		areaColor.setBackground(Color.decode("#B1C5D0"));
 		jp.add(areaColor);
 
 		listaProductos = ComponentesVentana.crearLabel(opcion, 100, 17, 200, 20, "#F1F0EE", true, jp);
-		listaProductos.setFont(new Font("Verdana", Font.BOLD, 16));
+		listaProductos.setFont(new Font("Gill Sans MT", Font.BOLD, 18));
 
 		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
 
@@ -57,8 +56,9 @@ public class VentanaProductos extends JFrame {
 
 		// MENU
 
-		btnMenu = ComponentesVentana.crearBoton("MENU", 600, 280, 100, 20, 12, "#D4B49F", jp);
-		btnMenu.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
+		btnMenu = ComponentesVentana.crearBoton("MENU", 700, 17, 100, 20, 20, "#B1C5D0", jp);
+		btnMenu.setFont(new Font("Gill Sans MT", Font.BOLD, 18));
+		btnMenu.setForeground(Color.decode("#F1F0EE"));
 
 		btnMenu.addActionListener(new ActionListener() {
 
@@ -71,14 +71,14 @@ public class VentanaProductos extends JFrame {
 		});
 
 		// PAGAR
-		btnPagar = ComponentesVentana.crearBoton("PAGAR", 600, 180, 100, 20, 20, "#D4B49F", jp);
+		btnPagar = ComponentesVentana.crearBoton("PAGAR", 600, 180, 100, 20, 20, "#B1C5D0", jp);
 		btnPagar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
 
 		numProductos = 0;
 		total = cliente.precioTotal();
 		
 		// BORRAR PRODUCTO DEL CARRITO
-		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 600, 250, 140, 20, 20, "#D4B49F", jp);
+		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 600, 250, 140, 20, 20, "#B1C5D0", jp);
 		btnBorrar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
 
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
@@ -109,7 +109,7 @@ public class VentanaProductos extends JFrame {
 
 				}
 			});
-			
+				
 			btnBorrar.addActionListener(new ActionListener() {
 
 				@Override
