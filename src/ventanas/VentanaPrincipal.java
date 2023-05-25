@@ -170,7 +170,7 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
         
-        menuMiCesta = new JMenuItem("                    MI CESTA");
+        menuMiCesta = new JMenuItem("                 MI CESTA");
         menuMiCesta.setBackground(Color.decode("#6384A6"));
         menuMiCesta.setForeground(Color.decode("#FFFFFF"));
         menuMiCesta.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
@@ -189,7 +189,9 @@ public class VentanaPrincipal extends JFrame {
         
 		
 		//A ADIR PRODUCTOS
-		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 200, 230, 150, 40, 15, "#6384A6", jp);
+		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 65, 250, 150, 20, 11, "#6384A6", jp);
+		btnCrearProducto.setForeground(Color.decode("#FFFFFF"));
+		btnCrearProducto.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
 		btnCrearProducto.setVisible(false);
 		
 		
@@ -207,8 +209,9 @@ public class VentanaPrincipal extends JFrame {
 
         
 		// SALIR DE LA APLICACION
-        btnSalir = ComponentesVentana.crearBoton("SALIR", 20, 390, 100, 20, 12, "#6384A6", jp);
-		btnSalir.setFont(new Font("Calibri", Font.PLAIN, 13));
+        btnSalir = ComponentesVentana.crearBoton("SALIR", 30, 370, 100, 20, 12, "#F1F0EE", jp);
+		btnSalir.setFont(new Font("Gill Sans Nova", Font.BOLD, 13));
+		btnSalir.setForeground(Color.decode("#6384A6"));
 
 		btnSalir.addActionListener(new ActionListener() {
 
