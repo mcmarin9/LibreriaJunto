@@ -98,11 +98,11 @@ public class ComponentesVentana {
 	public static JPanel crearPanelRadioButton(JRadioButton si, JRadioButton no) {
 
 		JPanel jpBool = new JPanel();
+		jpBool.setLayout(null);
 		jpBool.setBackground(Color.decode("#B1C5D0"));
 		jpBool.setBounds(495, 135, 100, 25);
 		jpBool.add(si);
 		jpBool.add(no);
-		jpBool.setLayout(null);
 		jpBool.setVisible(false);
 		return jpBool;
 	}
