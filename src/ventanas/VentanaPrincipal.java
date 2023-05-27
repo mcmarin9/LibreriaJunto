@@ -143,7 +143,7 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 
-		// A ADIR PRODUCTOS
+		// AÑADIR PRODUCTOS
 		btnCrearProducto = ComponentesVentana.crearBoton("CREAR PRODUCTO", 65, 250, 150, 20, 11, "#6384A6", jp);
 		btnCrearProducto.setForeground(Color.decode("#FFFFFF"));
 		btnCrearProducto.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));

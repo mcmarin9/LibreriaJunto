@@ -24,7 +24,9 @@ public class VentanaInicioSesion extends JFrame {
 	private JTextArea mensaje;
 
 	public VentanaInicioSesion() {
+		
 		super("The Meow Desk");
+		
 		jp = new JPanel();
 		this.setContentPane(jp);
 		this.setLayout(new GroupLayout(jp));

@@ -123,5 +123,4 @@ public class ComponentesVentana {
 		return bg;
 	}
 
-
 }

@@ -62,6 +62,7 @@ public class VentanaComprar extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
+			
 		});
 
 		btnMasInfo = ComponentesVentana.crearBoton("+ INFO", 15, 22, 80, 20, 12, "#B2C5D0", jp);
