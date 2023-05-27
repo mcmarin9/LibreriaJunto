@@ -4,9 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
-
-import javax.swing.Action;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -54,13 +51,12 @@ public class VentanaProductos extends JFrame {
 
 		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
 		jp.add(areaProductos);
-		
+
 		scroll = new JScrollPane(areaProductos);
 		scroll.setBounds(100, 100, 450, 300);
 		this.add(scroll);
 
 		// MENU
-
 		btnMenu = ComponentesVentana.crearBoton("MENU", 700, 15, 100, 20, 20, "#B1C5D0", jp);
 		btnMenu.setFont(new Font("Gill Sans MT", Font.BOLD, 14));
 		btnMenu.setForeground(Color.decode("#F1F0EE"));
@@ -84,7 +80,7 @@ public class VentanaProductos extends JFrame {
 		// BORRAR PRODUCTO DEL CARRITO´
 		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 580, 255, 180, 20, 13, "#B1C5D0", jp);
 		btnPagar.setForeground(Color.decode("#FFFFFF"));
-		btnBorrar.setForeground(Color.decode("#FFFFFF"));		
+		btnBorrar.setForeground(Color.decode("#FFFFFF"));
 
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
 			Producto.mostrarProductos(areaProductos);
@@ -92,18 +88,17 @@ public class VentanaProductos extends JFrame {
 			btnBorrar.setVisible(false);
 
 		} else { // cuando el botón que se ha pulsado es el de VerCarrito.
-
-			// OPCIONES MI CESTA
 			
-		
+			// OPCIONES MI CESTA
+
 			numProductos = cliente.mostrarListaCompra(areaProductos);
 
 			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: " + (numProductos - 1), 580, 150,
-					230, 20,  true, jp);
-			ComponentesVentana.fuenteLabel(txtCantidadProductos, "Gill Sans MT", Font.BOLD, 15,"#000000");
-			
+					230, 20, true, jp);
+			ComponentesVentana.fuenteLabel(txtCantidadProductos, "Gill Sans MT", Font.BOLD, 15, "#000000");
+
 			txtTotal = ComponentesVentana.crearLabel("Total: " + total + "€", 580, 180, 140, 20, true, jp);
-			ComponentesVentana.fuenteLabel(txtTotal, "Gill Sans MT", Font.BOLD, 15,"#000000");
+			ComponentesVentana.fuenteLabel(txtTotal, "Gill Sans MT", Font.BOLD, 15, "#000000");
 
 			btnPagar.addActionListener(new ActionListener() {
 
@@ -138,8 +133,8 @@ public class VentanaProductos extends JFrame {
 							encontrado = true;
 							break;
 						}
-
 					}
+					
 					if (!encontrado) {
 						System.out.println("Ese producto no está en el carrito.");
 					}

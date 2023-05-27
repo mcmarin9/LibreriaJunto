@@ -105,9 +105,6 @@ public class Cliente {
 	 * Este método compone el código de producto formado por una letra y un número
 	 * de tres dígitos y llama a buscarProducto para que si existe el producto y si
 	 * quedan unidades.
-	 * 
-	 * Este m�todo compone el c�digo de producto formado por una letra y un n�mero de tres d�gitos y 
-	 * llama a buscarProducto para que si existe el producto y si quedan unidades. 
 
 	 * @param numCategoria
 	 * @param numProducto

@@ -1,14 +1,10 @@
 package ventanas;
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-
-import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
@@ -40,9 +36,10 @@ public class VentanaCrearProducto extends JFrame {
 	private JRadioButton si, no;
 
 	public VentanaCrearProducto() {
+		
 		super("CREAR PRODUCTO");
+		
 		jp = new JPanel();
-
 		this.setContentPane(jp);
 		this.setSize(700, 360);
 		this.setLocationRelativeTo(null);
@@ -57,6 +54,7 @@ public class VentanaCrearProducto extends JFrame {
 		areaColor.setBackground(Color.decode("#FFFFFF"));
 		jp.add(areaColor);
 
+		
 		listaProductos = new JComboBox<String>();
 		listaProductos.setBounds(25, 100, 120, 20);
 		add(listaProductos);
@@ -85,6 +83,7 @@ public class VentanaCrearProducto extends JFrame {
 		ComponentesVentana.fuenteLabel(txtCrear, "Gill Sans MT", 1, 16, "#FFFFFF");
 		txtCrear.setForeground(Color.decode("#B1C5D0"));
 
+		// CAMPOS COMUNES
 		txtNombre = ComponentesVentana.crearLabel("Nombre", 175, 95, 100, 25, true, jp);
 		campoNombre = ComponentesVentana.crearTextField(275, 95, 100, 25, true, false, "#F5F5F5", jp);
 
@@ -97,6 +96,8 @@ public class VentanaCrearProducto extends JFrame {
 		txtUnidadesStock = ComponentesVentana.crearLabel("Unidades Stock", 395, 130, 100, 25, true, jp);
 		campoUnidadesStock = ComponentesVentana.crearTextField(495, 130, 100, 25, true, false, "#F5F5F5", jp);
 
+		
+		// CAMPOS ESPECIFICOS
 		txtColor = ComponentesVentana.crearLabel("Color", 175, 165, 100, 25, false, jp);
 		campoColor = ComponentesVentana.crearTextField(275, 165, 100, 25, false, true, "#F5F5F5", jp);
 

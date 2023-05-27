@@ -1,12 +1,10 @@
-	package ventanas;
+package ventanas;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,9 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
 
 import libreria.Boligrafo;
 import libreria.Carpeta;
@@ -168,12 +163,6 @@ public class VentanaComprar extends JFrame {
 		return productos.toArray(new String[0]);
 	}
 
-/**
- * 
- * @param lista
- * @param numCategoria
- * @param clase
- */
 	private void verMasInfo(JList<String> lista, int numCategoria, Class<?> clase) {
 
 		final String[] LETRAS = { "", "B", "C", "E", "LT",  "LB"};

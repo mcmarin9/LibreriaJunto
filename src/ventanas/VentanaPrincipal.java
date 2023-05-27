@@ -46,13 +46,14 @@ public class VentanaPrincipal extends JFrame {
 		fotoGatito.setBounds(440, 90, 210, 280);
 		jp.add(fotoGatito);
 
-		// Cargar imagen de los iconos
+		// CARGAR IMAGEN DE LOS ICONOS
 		Image imagenIconos = cargarImagen("https://i.ibb.co/Rj1M7dh/iconos-Redes.png");
 		ImageIcon iconosRedimensionados = new ImageIcon(imagenIconos.getScaledInstance(90, 90, Image.SCALE_SMOOTH));
 		iconos = new JLabel(iconosRedimensionados);
 		iconos.setBounds(700, 320, 90, 90);
 		jp.add(iconos);
 
+		// DIRECCIÓN RRSS
 		arrobaTMD = ComponentesVentana.crearLabel("@themeowdesk", 705, 340, 100, 100, true, jp);
 		ComponentesVentana.fuenteLabel(arrobaTMD, "Calibri", 0, 13, "#000000");
 

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,7 +31,6 @@ public class VentanaInicioSesion extends JFrame {
 		jp.setBackground(Color.white);
 
 		// MENSAJES ERRORES
-
 		error = ComponentesVentana.crearLabel("", 50, 320, 320, 20, true, jp);
 
 		// Panel de color
@@ -47,7 +45,7 @@ public class VentanaInicioSesion extends JFrame {
 		jp.add(mensaje);
 		jp.add(areaColor);
 
-		// INICIO SESI N
+		// INICIO SESION
 
 		inicioSesion = ComponentesVentana.crearLabel("INICIA SESION EN TMD", 40, 15, 300, 42, true, jp);
 
@@ -60,7 +58,6 @@ public class VentanaInicioSesion extends JFrame {
 		campoTelefono = ComponentesVentana.crearTextField(108, 210, 120, 25, true, true, "#F5F5F5", jp);
 
 		// INICIAR SESION BOTON
-
 		iniciarSesion = ComponentesVentana.crearBoton("Iniciar Sesion", 108, 280, 120, 25, 17, "#B2C5D0", jp);
 		iniciarSesion.setFont(new Font("Calibri", Font.BOLD, 17));
 		iniciarSesion.setForeground(Color.decode("#FFFFFF"));
