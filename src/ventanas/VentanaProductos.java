@@ -21,7 +21,7 @@ import libreria.Producto;
 
 public class VentanaProductos extends JFrame {
 
-	private JLabel listaProductos, txtCantidadProductos, txtTotal;
+	private JLabel listaProductos, txtCantidadProductos, txtTotal, nombreLibreria;
 	private JButton btnMenu, btnPagar, btnBorrar;
 	private JTextArea areaProductos;
 	private JPanel areaColor;
@@ -39,25 +39,30 @@ public class VentanaProductos extends JFrame {
 		this.setContentPane(jp);
 
 		jp.setBackground(Color.decode("#F1F0EE"));
-		
+
+		nombreLibreria = ComponentesVentana.crearLabel("The Meow Desk", 20, 17, 130, 15, true, jp);
+		ComponentesVentana.fuenteLabel(nombreLibreria, "Gill Sans MT", 1, 14, "#B1C5D0");
+		nombreLibreria.setForeground(Color.decode("#F1F0EE"));
+
 		areaColor = new JPanel();
-		areaColor.setBounds(0, 0, 850, 55);
+		areaColor.setBounds(0, 0, 850, 50);
 		areaColor.setBackground(Color.decode("#B1C5D0"));
 		jp.add(areaColor);
 
-		listaProductos = ComponentesVentana.crearLabel(opcion, 100, 17, 200, 20, "#F1F0EE", true, jp);
-		listaProductos.setFont(new Font("Gill Sans MT", Font.BOLD, 18));
+		listaProductos = ComponentesVentana.crearLabel(opcion, 365, 15, 200, 20, true, jp);
+		ComponentesVentana.fuenteLabel(listaProductos, "Gill Sans MT", Font.BOLD, 18, "#F1F0EE");
 
 		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
-
+		jp.add(areaProductos);
+		
 		scroll = new JScrollPane(areaProductos);
 		scroll.setBounds(100, 100, 450, 300);
 		this.add(scroll);
 
 		// MENU
 
-		btnMenu = ComponentesVentana.crearBoton("MENU", 700, 17, 100, 20, 20, "#B1C5D0", jp);
-		btnMenu.setFont(new Font("Gill Sans MT", Font.BOLD, 18));
+		btnMenu = ComponentesVentana.crearBoton("MENU", 700, 15, 100, 20, 20, "#B1C5D0", jp);
+		btnMenu.setFont(new Font("Gill Sans MT", Font.BOLD, 14));
 		btnMenu.setForeground(Color.decode("#F1F0EE"));
 
 		btnMenu.addActionListener(new ActionListener() {
@@ -71,29 +76,34 @@ public class VentanaProductos extends JFrame {
 		});
 
 		// PAGAR
-		btnPagar = ComponentesVentana.crearBoton("PAGAR", 600, 180, 100, 20, 20, "#B1C5D0", jp);
-		btnPagar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
+		btnPagar = ComponentesVentana.crearBoton("PAGAR", 580, 230, 90, 20, 13, "#B1C5D0", jp);
 
 		numProductos = 0;
 		total = cliente.precioTotal();
-		
-		// BORRAR PRODUCTO DEL CARRITO
-		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 600, 250, 140, 20, 20, "#B1C5D0", jp);
-		btnBorrar.setFont(new Font("Calibri Bold", Font.PLAIN, 15));
+
+		// BORRAR PRODUCTO DEL CARRITO´
+		btnBorrar = ComponentesVentana.crearBoton("BORRAR PRODUCTO", 580, 255, 180, 20, 13, "#B1C5D0", jp);
+		btnPagar.setForeground(Color.decode("#FFFFFF"));
+		btnBorrar.setForeground(Color.decode("#FFFFFF"));		
 
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
 			Producto.mostrarProductos(areaProductos);
 			btnPagar.setVisible(false);
 			btnBorrar.setVisible(false);
+
 		} else { // cuando el botón que se ha pulsado es el de VerCarrito.
 
+			// OPCIONES MI CESTA
+			
+		
 			numProductos = cliente.mostrarListaCompra(areaProductos);
 
-			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: " + (numProductos - 1), 550, 80,
-					230, 20, "#000000", true, jp);
-			txtCantidadProductos.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
-			txtTotal = ComponentesVentana.crearLabel("Total: " + total + " €", 550, 100, 140, 20, "#000000", true, jp);
-			txtTotal.setFont(new Font("Calibri Bold", Font.PLAIN, 20));
+			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: " + (numProductos - 1), 580, 150,
+					230, 20,  true, jp);
+			ComponentesVentana.fuenteLabel(txtCantidadProductos, "Gill Sans MT", Font.BOLD, 15,"#000000");
+			
+			txtTotal = ComponentesVentana.crearLabel("Total: " + total + "€", 580, 180, 140, 20, true, jp);
+			ComponentesVentana.fuenteLabel(txtTotal, "Gill Sans MT", Font.BOLD, 15,"#000000");
 
 			btnPagar.addActionListener(new ActionListener() {
 
@@ -109,7 +119,7 @@ public class VentanaProductos extends JFrame {
 
 				}
 			});
-				
+
 			btnBorrar.addActionListener(new ActionListener() {
 
 				@Override

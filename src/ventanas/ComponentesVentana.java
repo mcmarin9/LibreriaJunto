@@ -18,15 +18,21 @@ import javax.swing.border.EmptyBorder;
 
 public class ComponentesVentana {
 
-	public static JLabel crearLabel(String texto, int x, int y, int ancho, int alto, String colorFuente,
-			boolean visible, JPanel jp) {
+	public static JLabel crearLabel(String texto, int x, int y, int ancho, int alto, boolean visible, JPanel jp) {
 		JLabel etiqueta = new JLabel(texto);
 		etiqueta.setBounds(x, y, ancho, alto);
-		etiqueta.setForeground(Color.decode(colorFuente));
 		etiqueta.setVisible(visible);
 		jp.add(etiqueta);
 
 		return etiqueta;
+	}
+	
+	public static void fuenteLabel(JLabel etiqueta, String fuente, int estilo, int tamano, String colorFuente) {
+		/* Font.PLAIN: 0.
+		 * Font.BOLD:  1.
+		 * Font.ITALIC: 2. */
+		etiqueta.setFont(new Font(fuente, estilo, tamano));
+		etiqueta.setForeground(Color.decode(colorFuente));
 	}
 
 	public static JTextField crearTextField(int x, int y, int ancho, int alto, boolean visible, boolean enabled,
@@ -42,11 +48,13 @@ public class ComponentesVentana {
 		return campo;
 	}
 
-	public static JSeparator crearSeparador(int x, int y, int ancho, int alto, String color) {
+	public static JSeparator crearSeparador(int x, int y, int ancho, int alto, String color, JPanel jp) {
 		JSeparator sep = new JSeparator();
 		sep.setBounds(x, y, ancho, alto);
 		sep.setBackground(Color.decode(color));
 		sep.setForeground(Color.decode(color));
+		jp.add(sep);
+
 		return sep;
 	}
 
@@ -54,8 +62,9 @@ public class ComponentesVentana {
 			JPanel jp) {
 		JButton boton = new JButton(texto);
 		boton.setBounds(x, y, ancho, alto);
-		boton.setFont(new Font("Arial", Font.BOLD, tamanoLetra));
+		boton.setFont(new Font("Gill Sans MT", Font.BOLD, tamanoLetra));
 		boton.setBackground(Color.decode(color));
+		boton.setVerticalAlignment(SwingConstants.CENTER);
 		boton.setBorder(null);
 		jp.add(boton);
 		return boton;
@@ -84,6 +93,7 @@ public class ComponentesVentana {
 		txtArea.setBackground(Color.decode(color));
 		txtArea.setForeground(Color.decode(colorLetra));
 		txtArea.setEditable(false);
+
 		return txtArea;
 	}
 
@@ -99,9 +109,10 @@ public class ComponentesVentana {
 		JPanel jpBool = new JPanel();
 		jpBool.setLayout(null);
 		jpBool.setBackground(Color.decode("#B1C5D0"));
-		jpBool.setBounds(495, 135, 100, 25);
+		jpBool.setBounds(495, 165, 100, 25);
 		jpBool.add(si);
 		jpBool.add(no);
+		jpBool.setLayout(null);
 		jpBool.setVisible(false);
 		return jpBool;
 	}
@@ -112,5 +123,6 @@ public class ComponentesVentana {
 		bg.add(no);
 		return bg;
 	}
+
 
 }
