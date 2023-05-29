@@ -49,7 +49,7 @@ public class Libreta extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + " NumHojas: " + numHojas + ", Tamaño: " + tamano + ", Color: " + color
+		return super.toString() + " | " +"NumHojas: " + numHojas + " | " +"Tamaño: " + tamano + " | "+"Color: " + color
 				+ "\n---------------------------------------------------------------------------" + "\n";
 	}
 

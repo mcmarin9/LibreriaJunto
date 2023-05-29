@@ -78,7 +78,7 @@ public abstract class Producto {
 	@Override
 	public String toString() {
 		return "Código: " + codigo + " | " + "Nombre: " + nombre + " | " + "Desc: " + descripcion + "\n"
-				+ "Precio: " + precioUnidad + "Stock: " + unidadesStock;
+				+ "Precio: " + precioUnidad +"€"+ " | " +"Stock: " + unidadesStock;
 	}
 
 	public abstract String generarCodigo();

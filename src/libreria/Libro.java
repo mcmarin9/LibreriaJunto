@@ -51,7 +51,7 @@ public class Libro extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + " Editorial: " + editorial + ", Temática: " + tematica + ", Autor: " + autor +
+		return super.toString() + " | "+"Editorial: " + editorial + " | " +"Temática: " + tematica + " | " +"Autor: " + autor +
 				"\n---------------------------------------------------------------------------" + "\n";
 	}
 

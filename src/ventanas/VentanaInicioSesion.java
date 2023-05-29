@@ -95,7 +95,7 @@ public class VentanaInicioSesion extends JFrame {
 		String nombre = campoNombre.getText();
 		
 		if (nombre.isEmpty() || numTelefono.isEmpty()) {
-			error.setText("Por favor, rellena todos los campos.");
+			error.setText("         Por favor, rellena todos los campos.");
 			return null;
 		}
 

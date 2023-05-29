@@ -49,11 +49,11 @@ public class VentanaComprar extends JFrame {
 		txtPrincipal = ComponentesVentana.crearLabel("COMPRAR",280, 10, 180, 25, true, jp);
 		ComponentesVentana.fuenteLabel(txtPrincipal, "Gill Sans Nova", 1, 16, "#F1F0EE");
 		
-		txtSeleccionar = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado CONTROL.",40, 325, 540, 24, true, jp);
+		txtSeleccionar = ComponentesVentana.crearLabel("Para seleccionar varios productos al mismo tiempo mantén pulsado CONTROL.",40, 325, 540, 24, false, jp);
 		ComponentesVentana.fuenteLabel(txtSeleccionar, "Arial", Font.ITALIC, 12, "#6384A6");
 		
 		
-		btnSalir = ComponentesVentana.crearBoton("SALIR", 15, 3, 80, 20, 12, "#B2C5D0", jp);
+		btnSalir = ComponentesVentana.crearBoton("MENÚ", 540, 13, 80, 20, 12, "#B2C5D0", jp);
 		btnSalir.setForeground(Color.decode("#F1F0EE"));
 		btnSalir.addActionListener(new ActionListener() {
 
@@ -64,7 +64,7 @@ public class VentanaComprar extends JFrame {
 			}
 		});
 
-		btnMasInfo = ComponentesVentana.crearBoton("+ INFO", 15, 22, 80, 20, 12, "#B2C5D0", jp);
+		btnMasInfo = ComponentesVentana.crearBoton("+ INFO", 15, 13, 80, 20, 12, "#B2C5D0", jp);
 		btnMasInfo.setForeground(Color.decode("#F1F0EE"));
 
 		btnMasInfo.addActionListener(new ActionListener() {
@@ -109,8 +109,10 @@ public class VentanaComprar extends JFrame {
 		btnAnadir = ComponentesVentana.crearBoton("AÑADIR", 190, 230, 110, 25, 13, "#6384A6", jp);
 		btnAnadir.addActionListener(new ActionListener() {
 
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				if (listaBoligrafos.isVisible()) {
 					guardarProducto(cliente, 1, listaBoligrafos);
 				} else if (listaCarpetas.isVisible()) {
@@ -142,7 +144,7 @@ public class VentanaComprar extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				ocultar(lista);
+				cambiarLista(lista);
 
 			}
 		});
@@ -193,7 +195,7 @@ public class VentanaComprar extends JFrame {
 
 	/**
 	 * @param cliente
-	 * @param numCategoria -> indica en el m�todo anadirCarrito la letra correspondiente al tipo de producto
+	 * @param numCategoria -> indica en el método anadirCarrito la letra correspondiente al tipo de producto
 	 * @param lista -> es una lista por si se añade más de un producto a la vez
 	 */
 	
@@ -213,8 +215,10 @@ public class VentanaComprar extends JFrame {
 
 	}
 
-	private void ocultar(JList<String> lista) {
+	private void cambiarLista(JList<String> lista) {
 		lista.clearSelection();
+		
+		txtSeleccionar.setVisible(true);
 
 		listaBoligrafos.setVisible(false);
 		listaCarpetas.setVisible(false);

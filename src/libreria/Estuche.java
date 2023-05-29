@@ -41,7 +41,7 @@ public class Estuche extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + " Tipo: " + tipo + " Colores: " + numColores
+		return super.toString() + " | "+ "Tipo: " + tipo + " | " + "Colores: " + numColores
 				+ "\n---------------------------------------------------------------------------" + "\n";
 	}
 
