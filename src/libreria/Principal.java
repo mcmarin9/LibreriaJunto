@@ -2,6 +2,10 @@ package libreria;
 
 import ventanas.VentanaInicioSesion;
 
+/**
+ * @author MCarmen Marín y Patricia Cano
+ */
+
 public class Principal {
 	public static void main(String[] args) {
 		Datos.inicializar();

@@ -1,6 +1,7 @@
 package ventanas;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,9 +52,8 @@ public class VentanaProductos extends JFrame {
 
 		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
 		jp.add(areaProductos);
-
+		
 		scroll = new JScrollPane(areaProductos);
-		scroll.setBounds(100, 100, 450, 300);
 		this.add(scroll);
 
 		// MENU
@@ -84,13 +84,14 @@ public class VentanaProductos extends JFrame {
 
 		if (opcion.equalsIgnoreCase("PRODUCTOS")) {
 			Producto.mostrarProductos(areaProductos);
+			scroll.setBounds(100, 100, 655, 300);
 			btnPagar.setVisible(false);
 			btnBorrar.setVisible(false);
 
 		} else { // cuando el botón que se ha pulsado es el de VerCarrito.
 			
 			// OPCIONES MI CESTA
-
+			scroll.setBounds(100, 100, 450, 300);
 			numProductos = cliente.mostrarListaCompra(areaProductos);
 
 			txtCantidadProductos = ComponentesVentana.crearLabel("Número de productos: " + (numProductos - 1), 580, 150,

@@ -41,7 +41,7 @@ public class Boligrafo extends Producto {
 
 	@Override
 	public String toString() {
-		return super.toString() + " | " +"Punta Fina: " + puntaFina +  " | " + " Color: " + color
+		return super.toString() + " | " + "Punta Fina: " + puntaFina + " | " + " Color: " + color
 				+ "\n---------------------------------------------------------------------------" + "\n";
 	}
 
@@ -59,5 +59,6 @@ public class Boligrafo extends Producto {
 
 		return codigo;
 	}
+
 
 }

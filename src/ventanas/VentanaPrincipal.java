@@ -21,6 +21,10 @@ import javax.swing.JSeparator;
 
 import libreria.Cliente;
 
+/**
+ * @author MCarmen Marín y Patricia Cano
+ */
+
 public class VentanaPrincipal extends JFrame {
 
 	private JLabel nombre, nombre2, fotoGatito, iconos, arrobaTMD;
@@ -69,7 +73,7 @@ public class VentanaPrincipal extends JFrame {
 		// MENU
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		menuBar.setPreferredSize(new Dimension(menuBar.getWidth(), 45));
+		menuBar.setPreferredSize(new Dimension(menuBar.getWidth(), 46));
 
 		// mensaje bienvenida
 		menuMensajeBienvenido = new JMenuItem("         BIENVENID@ " + cliente.getNombre().toUpperCase());
@@ -98,7 +102,7 @@ public class VentanaPrincipal extends JFrame {
 		menuVerProductos = new JMenuItem("            VER PRODUCTOS");
 		menuVerProductos.setBackground(Color.decode("#6384A6"));
 		menuVerProductos.setForeground(Color.decode("#FFFFFF"));
-		menuVerProductos.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
+		menuVerProductos.setFont(new Font("Gill Sans Nova", Font.BOLD, 12));
 		menuBar.add(menuVerProductos);
 
 		menuVerProductos.addActionListener(new ActionListener() {
@@ -114,7 +118,7 @@ public class VentanaPrincipal extends JFrame {
 		menuComprar = new JMenuItem("            COMPRAR");
 		menuComprar.setBackground(Color.decode("#6384A6"));
 		menuComprar.setForeground(Color.decode("#FFFFFF"));
-		menuComprar.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
+		menuComprar.setFont(new Font("Gill Sans Nova", Font.BOLD, 12));
 		menuBar.add(menuComprar);
 
 		menuComprar.addActionListener(new ActionListener() {
@@ -130,7 +134,7 @@ public class VentanaPrincipal extends JFrame {
 		menuMiCesta = new JMenuItem("                 MI CESTA");
 		menuMiCesta.setBackground(Color.decode("#6384A6"));
 		menuMiCesta.setForeground(Color.decode("#FFFFFF"));
-		menuMiCesta.setFont(new Font("Gill Sans Nova", Font.BOLD, 11));
+		menuMiCesta.setFont(new Font("Gill Sans Nova", Font.BOLD, 12));
 		menuBar.add(menuMiCesta);
 
 		menuMiCesta.addActionListener(new ActionListener() {
