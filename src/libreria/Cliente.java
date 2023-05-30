@@ -172,7 +172,7 @@ public class Cliente {
 		for (Producto producto : getListaCompra()) {
 			total += producto.getPrecioUnidad();
 		}
-		return total;
+		return Math.round(total * 100.0) / 100.0;
 	}
 	
 	
