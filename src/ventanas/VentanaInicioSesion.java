@@ -109,7 +109,7 @@ public class VentanaInicioSesion extends JFrame {
 				VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(cliente);
 				dispose();
 			} else {
-				error.setText("             Error, este número no disponible.");
+				error.setText("             Error, este número no está disponible.");
 			}
 		} else {
 			error.setText("Error, el número de teléfono debe tener 9 dígitos");

@@ -169,7 +169,7 @@ public class VentanaCrearProducto extends JFrame {
 							Integer.parseInt(obtenerTexto(campoUnidadesStock)), campoBool, obtenerTexto(campoColor));
 					creacionExito();
 				} else {
-					mostrarMensajeError("Rellena todos los campos.");
+					mostrarMensajeError("Rellena todos los campos correctamente.");
 				}
 				break;
 
@@ -188,7 +188,7 @@ public class VentanaCrearProducto extends JFrame {
 						creacionExito();
 					}
 				} else {
-					mostrarMensajeError("Rellena todos los campos.");
+					mostrarMensajeError("Rellena todos los campos correctamente.");
 				}
 				break;
 
@@ -201,7 +201,7 @@ public class VentanaCrearProducto extends JFrame {
 							Integer.parseInt(obtenerTexto(campoNum)));
 					creacionExito();
 				} else {
-					mostrarMensajeError("Rellena todos los campos.");
+					mostrarMensajeError("Rellena todos los campos correctamente.");
 				}
 				break;
 
@@ -215,7 +215,7 @@ public class VentanaCrearProducto extends JFrame {
 					creacionExito();
 
 				} else {
-					mostrarMensajeError("Rellena todos los campos.");
+					mostrarMensajeError("Rellena todos los campos correctamente.");
 				}
 				break;
 
@@ -228,7 +228,7 @@ public class VentanaCrearProducto extends JFrame {
 					creacionExito();
 
 				} else {
-					mostrarMensajeError("Rellena todos los campos.");
+					mostrarMensajeError("Rellena todos los campos correctamente.");
 				}
 				break;
 
