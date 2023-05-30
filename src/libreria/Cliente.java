@@ -123,7 +123,7 @@ public class Cliente {
 
 		if (productoEncontrado != null) {
 			listaCompra.add(productoEncontrado);
-			JOptionPane.showMessageDialog(null, "Producto añadido!");
+			JOptionPane.showMessageDialog(null, "Producto "+ codigoProducto +" añadido!");
 			System.out.println("Producto añadido a la lista de la compra.");
 		}
 	}

@@ -73,7 +73,7 @@ public class ComponentesVentana {
 		lista = new JList<>();
 		lista.setListData(VentanaComprar.obtenerListaProductos(clase));
 		lista.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		lista.setBounds(350, 120, 210, 180);
+		lista.setBounds(350, 120, 230, 180);
 		lista.setVisible(false);
 		jp.add(lista);
 		return lista;

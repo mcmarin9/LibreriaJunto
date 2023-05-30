@@ -51,6 +51,7 @@ public class VentanaProductos extends JFrame {
 		ComponentesVentana.fuenteLabel(listaProductos, "Gill Sans MT", Font.BOLD, 18, "#F1F0EE");
 
 		areaProductos = ComponentesVentana.crearMensajeArea("", 100, 100, 550, 550, "Arial", 13, "#FFFFFF", "#000000");
+		areaProductos.setCaretPosition(0); // Establecer la posición del cursor en el inicio del texto
 		jp.add(areaProductos);
 		
 		scroll = new JScrollPane(areaProductos);

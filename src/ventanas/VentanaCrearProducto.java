@@ -150,9 +150,7 @@ public class VentanaCrearProducto extends JFrame {
 
 	private void crearProducto() {
 		String seleccionado = (String) listaProductos.getSelectedItem();
-		
-		controlErroresGeneral();
-		
+
 		boolean campoBool = true;
 
 		if (si.isSelected()) {
@@ -160,103 +158,108 @@ public class VentanaCrearProducto extends JFrame {
 		} else {
 			campoBool = false;
 		}
-		
-		//CREACION DE LOS PRODUCTOS
-		switch (seleccionado.toUpperCase()) {
-		case "BOLIGRAFO":
-		    if (!campoVacio(campoColor)) {
-		        Boligrafo boliNuevo = new Boligrafo(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
-		                Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
-		                Integer.parseInt(obtenerTexto(campoUnidadesStock)), campoBool, obtenerTexto(campoColor));
-		        creacionExito();
-		    } else {
-		        mostrarMensajeError("Rellena todos los campos.");
-		    }
-		    break;
 
-		case "CARPETA":
-			if (!campoVacio(campoNum) && !campoVacio(campoTamano) && !campoVacio(campoColor)) {
-				if (no.isSelected() && Integer.parseInt(obtenerTexto(campoNum)) != 0) {
-					mostrarMensajeError(
-							"Es incompatible que el número de anillas sea distinto de 0 con la condición \"No tiene anillas\".\nSe establecerá el valor 0 para las anillas.");
-					campoNum.setText("0");
-				} else {
-					Carpeta carpetaNueva = new Carpeta(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
+		try {
+			// CREACION DE LOS PRODUCTOS
+			switch (seleccionado.toUpperCase()) {
+			case "BOLIGRAFO":
+				if (!campoVacio(campoColor) && controlErroresGeneral()) {
+					Boligrafo boliNuevo = new Boligrafo(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
 							Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
-							Integer.parseInt(obtenerTexto(campoUnidadesStock)), campoBool,
+							Integer.parseInt(obtenerTexto(campoUnidadesStock)), campoBool, obtenerTexto(campoColor));
+					creacionExito();
+				} else {
+					mostrarMensajeError("Rellena todos los campos.");
+				}
+				break;
+
+			case "CARPETA":
+				if (!campoVacio(campoNum) && !campoVacio(campoTamano) && !campoVacio(campoColor) && controlErroresGeneral()) {
+					if (no.isSelected() && Integer.parseInt(obtenerTexto(campoNum)) != 0) {
+						mostrarMensajeError(
+								"Es incompatible que el número de anillas sea distinto de 0 con la condición \"No tiene anillas\".\nSe establecerá el valor 0 para las anillas.");
+						campoNum.setText("0");
+					} else {
+						Carpeta carpetaNueva = new Carpeta(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
+								Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
+								Integer.parseInt(obtenerTexto(campoUnidadesStock)), campoBool,
+								Integer.parseInt(obtenerTexto(campoNum)), obtenerTexto(campoTamano),
+								obtenerTexto(campoColor));
+						creacionExito();
+					}
+				} else {
+					mostrarMensajeError("Rellena todos los campos.");
+				}
+				break;
+
+			case "ESTUCHE":
+	
+				if (!campoVacio(campoTipo) && !campoVacio(campoNum) && controlErroresGeneral()) {
+					Estuche estucheNuevo = new Estuche(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
+							Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
+							Integer.parseInt(obtenerTexto(campoUnidadesStock)), obtenerTexto(campoTipo),
+							Integer.parseInt(obtenerTexto(campoNum)));
+					creacionExito();
+				} else {
+					mostrarMensajeError("Rellena todos los campos.");
+				}
+				break;
+
+			case "LIBRETA":
+				if (!campoVacio(campoNum) && !campoVacio(campoTamano) && !campoVacio(campoColor) && controlErroresGeneral()) {
+					Libreta libretaNueva = new Libreta(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
+							Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
+							Integer.parseInt(obtenerTexto(campoUnidadesStock)),
 							Integer.parseInt(obtenerTexto(campoNum)), obtenerTexto(campoTamano),
 							obtenerTexto(campoColor));
 					creacionExito();
+
+				} else {
+					mostrarMensajeError("Rellena todos los campos.");
 				}
-			} else {
-				mostrarMensajeError("Rellena todos los campos.");
+				break;
+
+			case "LIBRO":
+				if (!campoVacio(campoEditorial) && !campoVacio(campoTematica) && !campoVacio(campoAutor) && controlErroresGeneral()) {
+					Libro libroNuevo = new Libro(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
+							Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
+							Integer.parseInt(obtenerTexto(campoUnidadesStock)), obtenerTexto(campoEditorial),
+							obtenerTexto(campoTematica), obtenerTexto(campoAutor));
+					creacionExito();
+
+				} else {
+					mostrarMensajeError("Rellena todos los campos.");
+				}
+				break;
+
+			default:
+				mostrarMensajeError("Selecciona un producto válido.");
+				break;
 			}
-			break;
-
-		case "ESTUCHE":
-			if (!campoVacio(campoTipo) && !campoVacio(campoNum)) {
-				Estuche estucheNuevo = new Estuche(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
-						Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
-						Integer.parseInt(obtenerTexto(campoUnidadesStock)), obtenerTexto(campoTipo),
-						Integer.parseInt(obtenerTexto(campoNum)));
-				creacionExito();
-			} else {
-				mostrarMensajeError("Rellena todos los campos.");
-			}
-			break;
-
-		case "LIBRETA":
-			if (!campoVacio(campoNum) && !campoVacio(campoTamano) && !campoVacio(campoColor)) {
-				Libreta libretaNueva = new Libreta(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
-						Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
-						Integer.parseInt(obtenerTexto(campoUnidadesStock)), Integer.parseInt(obtenerTexto(campoNum)),
-						obtenerTexto(campoTamano), obtenerTexto(campoColor));
-				creacionExito();
-
-			} else {
-				mostrarMensajeError("Rellena todos los campos.");
-			}
-			break;
-
-		case "LIBRO":
-			if (!campoVacio(campoEditorial) && !campoVacio(campoTematica) && !campoVacio(campoAutor)) {
-				Libro libroNuevo = new Libro(obtenerTexto(campoNombre), obtenerTexto(campoDescripcion),
-						Double.parseDouble(obtenerTexto(campoPrecioUnidad)),
-						Integer.parseInt(obtenerTexto(campoUnidadesStock)), obtenerTexto(campoEditorial),
-						obtenerTexto(campoTematica), obtenerTexto(campoAutor));
-				creacionExito();
-
-			} else {
-				mostrarMensajeError("Rellena todos los campos.");
-			}
-			break;
-
-		default:
-			mostrarMensajeError("Selecciona un producto válido.");
-			break;
+		} catch (NumberFormatException e) {
+			mostrarMensajeError("Tienes que introducir un número válido");
 		}
 	}
 
-	private void controlErroresGeneral() {
+	private boolean controlErroresGeneral() {
+
+		if (jpBool.isVisible() && bg.getSelection() == null) {
+			return false;
+		}
+
 		if (campoVacio(campoNombre) || campoVacio(campoDescripcion) || campoVacio(campoPrecioUnidad)
-		        || campoVacio(campoUnidadesStock)) {
-		    mostrarMensajeError("Debes llenar todos los campos.");
-		    return;
+				|| campoVacio(campoUnidadesStock)) {
+			return false;
 		}
 
 		if (!campoNumerico(campoPrecioUnidad, double.class) || !campoNumerico(campoUnidadesStock, int.class)
 				|| (campoNum.isVisible() && !campoNumerico(campoNum, int.class))) {
-			mostrarMensajeError("Tienes que introducir un número válido");
-			return;
+			return false;
 		}
 
-		if (jpBool.isVisible() && bg.getSelection() == null) {
-			mostrarMensajeError("Rellena el radio button");
-			return;
-		}
+		return true;
 	}
-	
-	
+
 	private boolean campoVacio(JTextField campo) {
 		String texto = obtenerTexto(campo);
 		if (texto.isEmpty()) {
